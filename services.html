@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - CloudStaff Consulting GmbH</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap">
+    <style>
+        /* Modern Professional Theme with Blue-Gray Accents */
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #e2e8f0;
+            --accent: #4a5568;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f7f7f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: var(--black);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            margin-right: auto;
+            padding-right: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--black);
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .logo-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary);
+            margin: 5px 0 3px;
+        }
+        
+        .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-section p {
+            margin-bottom: 10px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 18px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        /* Page styles */
+        .page-header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .services-overview {
+            padding: 60px 0;
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .category-header i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+        
+        .service-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .service-item {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+        }
+        
+        .process {
+            background-color: var(--light-gray);
+            padding: 60px 0;
+        }
+        
+        .process h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            padding: 60px 0;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .testimonial {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .client {
+            margin-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 10px;
+        }
+        
+        .name {
+            font-weight: bold;
+            display: block;
+        }
+        
+        .cta {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            margin-bottom: 15px;
+        }
+        
+        .cta p {
+            margin-bottom: 30px;
+        }
+        
+        .cta .btn {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        .cta .btn:hover {
+            background-color: var(--light-gray);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                padding-right: 0;
+                align-items: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 15px;
+                margin-bottom: 10px;
+            }
+            
+            .service-item, .testimonial {
+                min-width: 100%;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-step {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">CSC</div>
+                <div class="logo-divider"></div>
+                <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="fuer-unternehmen.html">Unternehmen</a></li>
+                    <li><a href="fuer-kandidaten.html">Freelancer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Unsere Services</h2>
+            <p>Professionelle Recruiting-Lösungen für den SAP-Bereich</p>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <div class="service-category">
+                <div class="category-header">
+                    <i class="fas fa-building"></i>
+                    <h3>Für Unternehmen</h3>
+                </div>
+                <p>Maßgeschneiderte Recruitment-Lösungen für Unternehmen, die auf der Suche nach qualifizierten SAP-Experten sind.</p>
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Personalvermittlung</h4>
+                        <p>Gezielte Suche und Vermittlung von qualifizierten SAP-Experten für Festanstellungen.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Projektbesetzung</h4>
+                        <p>Schnelle Besetzung von SAP-Projektpositionen mit erfahrenen Freelancern und Contractors.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Executive Search</h4>
+                        <p>Diskrete Suche nach Führungskräften und Spezialisten im SAP-Umfeld.</p>
+                    </div>
+                </div>
+                <a href="fuer-unternehmen.html" class="btn">Mehr für Unternehmen</a>
+            </div>
+
+            <div class="service-category">
+                <div class="category-header">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Für Freelancer</h3>
+                </div>
+                <p>Professionelle Betreuung für SAP-Spezialisten auf der Suche nach neuen beruflichen Herausforderungen.</p>
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Karriereberatung</h4>
+                        <p>Individuelle Beratung zu Karrieremöglichkeiten im SAP-Umfeld und Entwicklung personalisierter Karrierepläne.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Stellenvermittlung</h4>
+                        <p>Vermittlung passender Festanstellungen bei renommierten Unternehmen im SAP-Bereich.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Freelancer-Projekte</h4>
+                        <p>Vermittlung attraktiver Projektaufträge für selbständige SAP-Berater und Freelancer.</p>
+                    </div>
+                </div>
+                <a href="fuer-kandidaten.html" class="btn">Mehr für Freelancer</a>
+            </div>
+
+            <div class="service-category">
+                <div class="category-header">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Zusätzliche Services</h3>
+                </div>
+                <p>Ergänzende Dienstleistungen für eine erfolgreiche Zusammenarbeit zwischen Unternehmen und Kandidaten.</p>
+                <div class="service-items">
+                    <div class="service-item">
+                        <h4>Interview-Coaching</h4>
+                        <p>Professionelle Vorbereitung auf Bewerbungsgespräche für Kandidaten im SAP-Bereich.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Gehaltsberatung</h4>
+                        <p>Fundierte Beratung zu marktüblichen Gehältern und Verhandlungsstrategien.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Onboarding-Unterstützung</h4>
+                        <p>Begleitung in der Einarbeitungsphase für einen erfolgreichen Start im neuen Unternehmen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2>Unser Prozess</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Erstgespräch</h3>
+                    <p>Detaillierte Analyse Ihrer Anforderungen und Wünsche</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Recherche & Matching</h3>
+                    <p>Gezielte Suche nach passenden Kandidaten oder Stellen</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Vorstellung & Auswahl</h3>
+                    <p>Präsentation vorgeprüfter Kandidaten oder Positionen</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Begleitung</h3>
+                    <p>Unterstützung während des gesamten Prozesses</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Nachbetreuung</h3>
+                    <p>Langfristige Betreuung zur Sicherstellung der Zufriedenheit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Was unsere Kunden sagen</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"Die professionelle Herangehensweise und das tiefe Verständnis für unsere SAP-Anforderungen haben uns überzeugt."</p>
+                    <div class="client">
+                        <span class="name">Klaus Bergmann</span>
+                        <span class="position">CIO, Logistik AG</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Herr Pilis hat es geschafft, innerhalb kürzester Zeit die passenden SAP-Experten für unser internationales Projekt zu finden."</p>
+                    <div class="client">
+                        <span class="name">Sandra Fischer</span>
+                        <span class="position">Projektleiterin, Global Tech GmbH</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Die persönliche Betreuung und das maßgeschneiderte Matching haben mir zu meiner Traumposition verholfen."</p>
+                    <div class="client">
+                        <span class="name">Martin Weber</span>
+                        <span class="position">SAP Solution Architect</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Bereit für eine Zusammenarbeit?</h2>
+            <p>Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch</p>
+            <a href="impressum.html" class="btn">Jetzt anfragen</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">CSC</div>
+                    <div class="logo-divider"></div>
+                    <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                        CloudStaff Consulting GmbH ist Ihr vertrauensvoller Partner für SAP-Personalberatung in DACH.
+                    </p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Im Mediapark 5, Köln, 50670, Deutschland</p>
+                    <p><i class="fas fa-phone"></i> +49 (0) 1517 0517620</p>
+                    <p><i class="fas fa-envelope"></i> r.pilis@cloudstaffconsulting.com</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 CloudStaff Consulting GmbH. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
+</html> 

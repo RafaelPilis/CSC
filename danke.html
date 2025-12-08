@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vielen Dank für Ihre Registrierung | CloudStaff Consulting GmbH</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Inter:wght@400;700&display=swap">
+    <style>
+        body {
+            background: #1e3a5f;
+            color: #fff;
+            font-family: 'Inter', 'IBM Plex Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .danke-container {
+            background: #fff;
+            color: #1e3a5f;
+            border-radius: 18px;
+            box-shadow: 0 6px 32px rgba(30,58,95,0.18);
+            padding: 48px 32px 40px 32px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+        .danke-container .icon {
+            font-size: 3.5rem;
+            color: #4eca8a;
+            margin-bottom: 18px;
+        }
+        .danke-container h1 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .danke-container p {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        .btn-home {
+            display: inline-block;
+            background: #1e3a5f;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.08rem;
+            transition: background 0.2s;
+        }
+        .btn-home:hover {
+            background: #16304a;
+        }
+    </style>
+</head>
+<body>
+    <div class="danke-container">
+        <div class="icon"><i class="fas fa-check-circle"></i></div>
+        <h1>Vielen Dank für Ihre Registrierung!</h1>
+        <p>Ihre Daten wurden erfolgreich übermittelt.<br>
+        Unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.<br>
+        Wir freuen uns darauf, Sie auf Ihrem Karriereweg zu begleiten.</p>
+        <a href="index.html" class="btn-home"><i class="fas fa-home"></i> Zur Startseite</a>
+    </div>
+
+    <!-- Cookie-Handling für sessionId -->
+    <script>
+    (function() {
+        // Cookie-Funktionen
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // sessionId Cookie setzen, lesen oder löschen
+        function initSessionId() {
+            var sessionId = getCookie('sessionId');
+            
+            // Wenn keine sessionId existiert, erstelle eine neue
+            if (!sessionId) {
+                // Generiere eine eindeutige sessionId (z.B. Timestamp + Random)
+                sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                // Setze Cookie für die Dauer der Browser-Session (ohne expires wird es beim Schließen gelöscht)
+                setCookie('sessionId', sessionId);
+            }
+            
+            return sessionId;
+        }
+
+        // Beim Laden der Seite sessionId initialisieren
+        initSessionId();
+
+        // Globale Funktionen für externe Nutzung verfügbar machen
+        window.CookieHandler = {
+            set: setCookie,
+            get: getCookie,
+            delete: deleteCookie,
+            getSessionId: function() {
+                return getCookie('sessionId');
+            },
+            deleteSessionId: function() {
+                deleteCookie('sessionId');
+            }
+        };
+    })();
+    </script>
+</body>
+</html> 

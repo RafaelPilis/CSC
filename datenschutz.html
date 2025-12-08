@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung - CloudStaff Consulting</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e40520;
+            --primary-dark: #c30016;
+            --secondary: #e2e8f0;
+            --secondary-light: #333333;
+            --white: #ffffff;
+            --grey: #f5f5f5;
+            --grey-dark: #dddddd;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --black: #1a1a1a;
+            --accent: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            margin-right: auto;
+            padding-right: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--black);
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .logo-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--black);
+            margin: 5px 0 3px;
+        }
+        
+        .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--black);
+        }
+
+        /* Page Header */
+        .page-header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            color: var(--white);
+        }
+
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1497215842964-222b430dc094');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .banner-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.8;
+        }
+        
+        /* Privacy Section */
+        .privacy-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .privacy-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .privacy-intro {
+            max-width: 800px;
+        }
+        
+        .privacy-intro h3, .privacy-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .privacy-content {
+            margin-top: 40px;
+        }
+        
+        .privacy-content h4 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .privacy-content h5 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .privacy-content ol, .privacy-content ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .privacy-content ol li, .privacy-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .privacy-content p {
+            margin-bottom: 15px;
+        }
+        
+        .privacy-content strong {
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .footer-logo .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .footer-logo .logo-divider {
+            width: 35%;
+            height: 1px;
+            background-color: var(--secondary);
+            margin: 5px 0 3px;
+        }
+        
+        .footer-logo .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        .footer-logo p {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #e2e8f0;
+            opacity: 0.8;
+            text-align: left !important;
+            word-spacing: normal !important;
+            white-space: normal !important;
+            text-justify: none !important;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 250px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        
+        .footer-social {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-left: 10px;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+        
+        .footer-legal {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .footer-legal-links a {
+            margin: 0 15px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-legal-links a:hover {
+            color: var(--white);
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta-button {
+            background: linear-gradient(135deg, #233e68 0%, #1a2d4d 100%);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .floating-cta-button i {
+            font-size: 18px;
+        }
+
+        .floating-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+            color: #fff;
+        }
+
+        .contact-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 58, 95, 0.25);
+            z-index: 2000;
+            display: none;
+            padding: 20px;
+        }
+
+        .floating-contact-box {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(30,58,95,0.13);
+            padding: 18px 16px 14px 16px;
+            max-width: 340px;
+            width: 92vw;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            animation: fadeInPanel 0.2s;
+            position: fixed;
+            right: 30px;
+            bottom: 90px;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #1e3a5f;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-overlay:hover {
+            color: #c00;
+        }
+
+        @keyframes fadeInPanel {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .contact-panel-content h3 {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+        }
+
+        .floating-contact-box .contact-phone,
+        .floating-contact-box .contact-form-link,
+        .floating-contact-box .contact-hours {
+            font-size: 1rem;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .floating-contact-box .contact-phone i,
+        .floating-contact-box .contact-form-link i {
+            color: #1e3a5f;
+            font-size: 16px;
+        }
+
+        .floating-contact-box .contact-phone a,
+        .floating-contact-box .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .floating-contact-box .contact-phone a:hover,
+        .floating-contact-box .contact-form-link a:hover {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+
+        .floating-contact-box .contact-hours {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Contact Overlay Links */
+        .contact-overlay .contact-info-row .contact-phone a,
+        .contact-overlay .contact-info-row .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .contact-overlay .contact-info-row .contact-phone a:hover,
+        .contact-overlay .contact-info-row .contact-form-link a:hover {
+            color: #1e3a5f;
+            background-color: #e2e8f0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+
+            .page-header {
+                height: 250px;
+            }
+
+            .page-header h2 {
+                font-size: 30px;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(245, 245, 245, 0.95) 0%, #f5f5f5 10%, #f5f5f5 90%, rgba(245, 245, 245, 0.95) 100%);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            padding: 24px 20px;
+            z-index: 10000;
+            display: none;
+            border-top: 1px solid #1e3a5f;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cookie-banner-text {
+            flex: 1;
+            min-width: 300px;
+            color: var(--black);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-banner-text a {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+        }
+
+        .cookie-btn-accept {
+            background-color: #1e3a5f;
+            color: var(--white);
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: #2c4e80;
+        }
+
+        .cookie-btn-reject {
+            background-color: #ffffff;
+            color: #4a5568;
+            border: 1px solid #1e3a5f;
+        }
+
+        .cookie-btn-reject:hover {
+            background-color: #f0f0f0;
+        }
+
+        .cookie-btn-settings {
+            background-color: #ffffff;
+            color: #4a5568;
+            border: 1px solid #1e3a5f;
+        }
+
+        .cookie-btn-settings:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Cookie Settings Modal */
+        .cookie-settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cookie-settings-modal.show {
+            display: flex;
+        }
+
+        .cookie-settings-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookie-settings-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .cookie-settings-content p {
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-category {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        .cookie-category:last-child {
+            border-bottom: none;
+        }
+
+        .cookie-category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .cookie-category-header h3 {
+            color: var(--black);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .cookie-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .cookie-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider {
+            background-color: var(--primary);
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        .cookie-category-description {
+            font-size: 13px;
+            color: var(--accent);
+            line-height: 1.5;
+        }
+
+        .cookie-settings-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cookie-banner-buttons {
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start;">
+                <div class="logo-text">CSC</div>
+                <div class="logo-divider"></div>
+                <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="fuer-unternehmen.html">Unternehmen</a></li>
+                    <li><a href="fuer-kandidaten.html">Freelancer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="banner-image"></div>
+        <div class="banner-image-overlay">
+            <div class="container">
+                <h2>Datenschutzerklärung</h2>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy-section">
+        <div class="container">
+            <div class="privacy-container">
+                <div class="privacy-content">
+                    <div class="privacy-toc" style="margin-bottom: 40px;">
+                        <h3>Inhalt</h3>
+                        <ol>
+                            <li>EINFÜHRUNG</li>
+                            <li>DEFINITIONEN</li>
+                            <li>WELCHE ART VON PERSÖNLICHEN INFORMATIONEN SAMMELT CLOUDSTAFF?
+                                <ol>
+                                    <li>KANDIDATENDATEN</li>
+                                    <li>LIEFERANTEN-DATEN</li>
+                                    <li>WEBSITE-BENUTZER</li>
+                                </ol>
+                            </li>
+                            <li>WIE SAMMELT CLOUDSTAFF IHRE PERSÖNLICHEN DATEN?
+                                <ol>
+                                    <li>KANDIDATEN- und LIEFERANTENDATEN
+                                        <ol>
+                                            <li>Persönliche Daten, die Sie uns zur Verfügung stellen</li>
+                                            <li>Personenbezogene Daten, die wir aus anderen Quellen erhalten</li>
+                                        </ol>
+                                    </li>
+                                    <li>WEBSITE-BENUTZER</li>
+                                </ol>
+                            </li>
+                            <li>WARUM SAMMELT CLOUDSTAFF IHRE PERSÖNLICHEN DATEN UND WIE WERDEN SIE VERWENDET?
+                                <ol>
+                                    <li>KANDIDATENDATEN
+                                        <ol>
+                                            <li>Anwerbungsaktivitäten</li>
+                                            <li>Marketing-Aktivitäten</li>
+                                            <li>Überwachung der Chancengleichheit und andere sensible persönliche Daten</li>
+                                            <li>Um uns zu helfen, Rechtsansprüche zu begründen, auszuüben oder zu verteidigen</li>
+                                            <li>Verhaltensregeln</li>
+                                        </ol>
+                                    </li>
+                                    <li>LIEFERANTEN-DATEN</li>
+                                    <li>WEBSITE-BENUTZER</li>
+                                </ol>
+                            </li>
+                            <li>MIT WEM TEILT CLOUDSTAFF IHRE PERSÖNLICHEN DATEN?</li>
+                            <li>WIE SCHÜTZEN WIR IHRE PERSONENBEZOGENEN DATEN?</li>
+                            <li>WIE LANGE BEWAHREN WIR IHRE PERSONENBEZOGENEN DATEN AUF?</li>
+                            <li>UNSERE RECHTSGRUNDLAGEN FÜR DIE VERARBEITUNG IHRER DATEN
+                                <ol>
+                                    <li>Berechtigte Interessen</li>
+                                    <li>KANDIDATENDATEN</li>
+                                    <li>LIEFERANTEN-DATEN</li>
+                                    <li>Zustimmung</li>
+                                    <li>Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen</li>
+                                </ol>
+                            </li>
+                            <li>WIE KÖNNEN SIE AUF DIE PERSONENBEZOGENEN DATEN, DIE SIE CLOUDSTAFF GEGEBEN HABEN, ZUGREIFEN, SIE ÄNDERN ODER ZURÜCKNEHMEN?</li>
+                            <li>WIE SPEICHERN UND ÜBERMITTELN WIR IHRE DATEN INTERNATIONAL?</li>
+                            <li>WER IST FÜR DIE VERARBEITUNG IHRER PERSÖNLICHEN DATEN AUF DER ROTEN WEBSITE VERANTWORTLICH?</li>
+                            <li>COOKIES-POLITIK
+                                <ol>
+                                    <li>Was ist ein Keks?</li>
+                                    <li>Wie verwenden wir Cookies?</li>
+                                    <li>Welche Cookies verwenden wir?</li>
+                                </ol>
+                            </li>
+                            <li>WIE KÖNNEN SIE UNS KONTAKTIEREN?</li>
+                        </ol>
+                    </div>
+                    <div class="privacy-content-section">
+                        <h2>EINFÜHRUNG</h2>
+                        <p>CLOUDSTAFF und seine Tochtergesellschaften ist ein weltweit tätiges Personalvermittlungs- und Personalbeschaffungsunternehmen mit Schwerpunkt auf SAP- und Technologiedienstleistungen. Wir verpflichten uns sicherzustellen, dass wir bei der Erfassung und Verwendung von Informationen über Website-Nutzer, unsere Bewerber und Lieferanten alle Datenschutzgesetze (einschließlich, aber nicht beschränkt auf die Datenschutzgrundverordnung sowie andere globale Gesetze an unseren Standorten einhalten.</p>
+
+                        <p>Ihre Privatsphäre ist uns wichtig, und wir verpflichten uns zum Schutz und zur Wahrung Ihrer Datenschutzrechte.</p>
+
+                        <p>In der Datenschutzrichtlinie wird dargelegt, wie wir mit Ihren personenbezogenen Daten umgehen, unabhängig davon, ob wir Ihnen bei der Stellensuche helfen, unsere Beziehung zu Ihnen fortsetzen, nachdem wir eine Stelle für Sie gefunden haben, Ihnen eine Dienstleistung anbieten, eine Dienstleistung von Ihnen erhalten, Ihre Daten verwenden, um Sie um Ihre Unterstützung in Bezug auf einen unserer Kandidaten zu bitten, oder ob Sie unsere Website besuchen. Sie beschreibt, wie wir Ihre personenbezogenen Daten erheben, verwenden und verarbeiten und wie wir dabei unsere rechtlichen Verpflichtungen Ihnen gegenüber einhalten. Verantwortlicher für Datenverarbeitung im Sinne der DSGVO ist CLOUDSTAFF, Im Mediapark 5, 50670 Köln.</p>
+
+                        <p>Diese Datenschutzrichtlinie wurde zuletzt im Mai 2025 aktualisiert. Wir weisen darauf hin, dass wir diese Datenschutzrichtlinie regelmäßig anpassen. Bitte besuchen Sie diese Seite regelmäßig, um sich über Aktualisierungen dieser Datenschutzrichtlinie zu informieren.</p>
+
+                        <p>Diese Datenschutzrichtlinie entspricht dem höchsten Standard und gilt in den entsprechenden Ländern unseres internationalen Netzwerks. So können wir sicherstellen, dass wir alle geltenden Datenschutzbestimmungen einhalten, ganz gleich, wo Sie sich befinden.</p>
+                    </div>
+
+                    <div class="privacy-content-section">
+                        <h2>DEFINITIONEN</h2>
+                        <p><strong>Bewerber</strong> - umfasst Bewerber für alle von CLOUDSTAFF ausgeschriebenen oder beworbenen Stellen, einschließlich Festanstellungen, Teilzeitstellen, befristete Stellen und freiberufliche Stellen bei Kunden von CLOUDSTAFF, sowie Personen, die CLOUDSTAFF einen spekulativen Lebenslauf ohne Bezug zu einer bestimmten Stelle übermittelt haben. Einzelne Auftragnehmer, Freiberuflern und Mitarbeiter von Lieferanten oder anderen Dritten, die im Rahmen eines MSP-Angebots oder anderweitig für Stellen bei Kunden von CLOUDSTAFF vorgeschlagen werden, werden für die Zwecke dieser Datenschutzrichtlinie als Bewerber behandelt.</p>
+
+                        <p><strong>Kunden</strong> - dies umfasst unsere Kunden, Klienten und andere Personen, für die CLOUDSTAFF im Rahmen seiner Geschäftstätigkeit Dienstleistungen erbringt.</p>
+
+                        <p><strong>Löschen</strong> - obwohl wir uns bemühen, Ihre personenbezogenen Daten dauerhaft zu löschen, sobald die Aufbewahrungsfrist abgelaufen ist oder wir einen entsprechenden Antrag von Ihnen erhalten, kann es sein, dass einige Ihrer Daten noch in unseren Systemen vorhanden sind, zum Beispiel wenn sie darauf warten, überschrieben zu werden. Für unsere Zwecke sind diese Daten unbrauchbar gemacht worden, was bedeutet, dass sie zwar noch in einem Archivsystem vorhanden sind, auf das jedoch keines unserer operativen Systeme, Verfahren oder Mitarbeiter ohne weiteres zugreifen kann. Um jeden Zweifel auszuschließen, kann es für CLOUDSTAFF notwendig sein, Informationen aus rechtlichen, regulatorischen und/oder Prüfungsgründen aufzubewahren.</p>
+
+                        <p><strong>Allgemeine Datenschutzverordnung (DSGVO)</strong> - ein Rechtsinstrument der Europäischen Union, das auf die Harmonisierung der europäischen Datenschutzgesetze abzielt. Sie tritt am 25. Mai 2018 in Kraft, und alle Verweise auf sie sind so auszulegen, dass sie alle nationalen Rechtsvorschriften zu ihrer Umsetzung umfassen.</p>
+
+                        <p><strong>Gruppenunternehmen</strong> - bezeichnet jede Holdinggesellschaft von CLOUDSTAFF und jede Tochtergesellschaft von CLOUDSTAFF oder einer solchen Holdinggesellschaft, jeweils gemäß der Definition in Abschnitt 1159 Companies Act 2006.</p>
+
+                        <p><strong>Managed Service Provider (MSP)-Programme</strong> - Auslagerung der Verwaltung von externem Personal (einschließlich Freiberuflern, unabhängigen Auftragnehmern und Zeitarbeitskräften) durch den Kunden an einen externen Personalvermittler.</p>
+
+                        <p><strong>Recruitment Process Outsourcing (RPO)-Dienstleistungen</strong> - vollständige oder teilweise Auslagerung des Einstellungsverfahrens für Festangestellte an einen Personalvermittler.</p>
+
+                        <p><strong>Lieferanten</strong> - bezieht sich auf Personengesellschaften und Unternehmen (einschließlich Einzelunternehmer) sowie atypische Arbeitnehmer wie unabhängige Auftragnehmer und Freiberufler, die Dienstleistungen für CLOUDSTAFF erbringen. Unter bestimmten Umständen wird CLOUDSTAFF die Dienstleistungen, die es für Kunden erbringt, an Drittanbieter weitervergeben, die Dienstleistungen im Namen von CLOUDSTAFF erbringen. In diesem Zusammenhang werden Lieferanten, bei denen es sich um einzelne Auftragnehmer, freiberufliche Mitarbeiter oder Angestellte von Lieferanten handelt, für Datenschutzzwecke als Kandidaten behandelt. Bitte beachten Sie, dass CLOUDSTAFF in diesem Zusammenhang von den Zulieferern verlangt, dass sie die relevanten Teile dieser Datenschutzrichtlinie (insbesondere die Abschnitte, die sich an die Bewerber richten) an ihre Mitarbeiter weitergeben.</p>
+
+                        <p><strong>Website-Benutzer</strong> - jede Person, die auf eine der Websites von CLOUDSTAFF zugreift.</p>
+                    </div>
+
+                    <div class="privacy-content-section">
+                        <h2>WELCHE ART VON PERSÖNLICHEN INFORMATIONEN SAMMELT CLOUDSTAFF?</h2>
+                        
+                        <h3>KANDIDATENDATEN</h3>
+                        <p>Abhängig von den jeweiligen Umständen und den geltenden lokalen Gesetzen und Anforderungen können wir einige oder alle der unten aufgeführten Informationen sammeln, um Ihnen Beschäftigungsmöglichkeiten anbieten zu können, die auf Ihre Umstände und Interessen zugeschnitten sind. In einigen Rechtsordnungen ist es uns untersagt, einige der unten aufgeführten Daten zu verarbeiten. In solchen Fällen werden wir die Daten in diesen Ländern nicht verarbeiten:</p>
+                        
+                        <ul>
+                            <li>Name;</li>
+                            <li>Alter/Geburtsdatum;</li>
+                            <li>Sex/Geschlecht;</li>
+                            <li>Kontaktinformationen;</li>
+                            <li>Details zur Ausbildung;</li>
+                            <li>beruflicher Werdegang;</li>
+                            <li>Angaben zum Referenzgeber / Referenzperson;</li>
+                            <li>Einwanderungsstatus (ob Sie eine Arbeitserlaubnis benötigen);</li>
+                            <li>Nationalität/Staatsangehörigkeit/Geburtsort;</li>
+                            <li>eine Kopie Ihres Führerscheins und/oder Reisepasses/Personalausweises;</li>
+                            <li>finanzielle Informationen (wenn wir finanzielle Hintergrundprüfungen durchführen müssen);</li>
+                            <li>Sozialversicherungsnummer (oder eine gleichwertige Nummer in Ihrem Land) und andere steuerrelevante Informationen;</li>
+                            <li>Informationen zur Vielfalt, einschließlich Informationen zur Rasse oder ethnischen Herkunft, zu religiösen oder ähnlichen Überzeugungen sowie zur körperlichen oder geistigen Gesundheit, einschließlich Informationen zu Behinderungen;</li>
+                            <li>Angaben zu etwaigen strafrechtlichen Verurteilungen, wenn dies für die Stelle, auf die Sie sich bewerben möchten, erforderlich ist;</li>
+                            <li>Angaben zu Ihren derzeitigen Vergütungs-, Renten- und Sozialleistungsregelungen;</li>
+                            <li>Informationen über Ihre Interessen und Bedürfnisse in Bezug auf eine künftige Beschäftigung, die sowohl direkt erhoben als auch abgeleitet werden, z. B. aus angesehenen Stellenangeboten oder gelesenen Artikeln auf unserer Website;</li>
+                            <li>zusätzliche Informationen, die Sie uns mitteilen möchten;</li>
+                            <li>zusätzliche Informationen, die Ihre Referenzpersonen uns über Sie mitteilen möchten;</li>
+                            <li>zusätzliche Informationen, die uns unsere Kunden über Sie mitteilen oder die wir aus anderen Quellen Dritter, wie z. B. Jobbörsen, erhalten;</li>
+                            <li>IP-Adresse; und</li>
+                            <li>die Daten, Zeiten und Häufigkeit, mit der Sie auf unsere Dienste zugreifen.</li>
+                        </ul>
+
+                        <h3>LIEFERANTEN-DATEN</h3>
+                        <p>Wir sammeln nicht viele Daten über Lieferanten - wir müssen lediglich sicherstellen, dass unsere Geschäftsbeziehung reibungslos verläuft. Wir erfassen die Angaben zu unseren Ansprechpartnern in Ihrem Unternehmen, z. B. Namen, Telefonnummern und E-Mail-Adressen, sowie Unterlagen zur Einhaltung von Vorschriften, z. B. Ihre Unternehmensregistrierung und Ihre Umsatzsteuer-Identifikationsnummer. Außerdem benötigen wir Ihre Bankverbindung, damit wir Sie bezahlen können.</p>
+
+                        <h3>WEBSITE-BENUTZER</h3>
+                        <p>Wir erheben eine begrenzte Anzahl von Daten von unseren Website-Benutzern, die wir verwenden, um Ihre Erfahrung bei der Nutzung unserer Website zu verbessern und um uns bei der Verwaltung der von uns angebotenen Dienste zu helfen. Dazu gehören technische Informationen, einschließlich der Internetprotokoll-Adresse (IP), mit der Ihr Computer mit dem Internet verbunden ist, Ihre Anmeldeinformationen, Browsertyp und -version, Zeitzoneneinstellung, Browser-Plug-in-Typen und -Versionen, Betriebssystem und Plattform, Informationen über Ihren Besuch, einschließlich des vollständigen Uniform Resource Locators (URL) Clickstream zu, durch und von unserer Website (einschließlich Datum und Uhrzeit), Produkte, die Sie sich angesehen oder nach denen Sie gesucht haben, Seitenreaktionszeiten, Download-Fehler, Dauer der Besuche auf bestimmten Seiten, Informationen über die Seiteninteraktion (z. B. Scrollen, Klicken und Überfahren mit der Maus) und die Methoden, mit denen Sie die Seite verlassen haben, sowie alle Telefonnummern, die Sie verwendet haben, um unseren Kundendienst anzurufen.</p>
+                    </div>
+
+                    <div class="privacy-content-section">
+                        <h2>WIE SAMMELT CLOUDSTAFF IHRE PERSÖNLICHEN DATEN?</h2>
+
+                        <h3>KANDIDATEN- und LIEFERANTENDATEN</h3>
+                        <p>Wir erheben personenbezogene Daten von Bewerbern auf zwei Arten:</p>
+                        <ol>
+                            <li>Persönliche Daten, die Sie als Kandidat uns zur Verfügung stellen; und</li>
+                            <li>Personenbezogene Daten, die wir aus anderen Quellen erhalten.</li>
+                        </ol>
+
+                        <h4>Persönliche Daten, die Sie uns zur Verfügung stellen</h4>
+                        <p>CLOUDSTAFF benötigt bestimmte Informationen über Sie, um Ihnen einen maßgeschneiderten Service bieten zu können. Dies ermöglicht es uns, Ihnen die besten Möglichkeiten zu bieten und sollte Ihnen Zeit ersparen, da Sie sich nicht durch Informationen über Stellen und Dienstleistungen wühlen müssen, die für Sie nicht relevant sind.</p>
+
+                        <p>Es gibt zahlreiche Möglichkeiten, wie Sie Ihre Daten mit uns teilen können - es kommt ganz darauf an, was Ihnen passt. Dazu können gehören:</p>
+                        <ul>
+                            <li>die Eingabe Ihrer Daten auf der CLOUDSTAFF-Website oder über ein Antragsformular als Teil des Registrierungsprozesses;</li>
+                            <li>Hinterlassen eines Lebenslaufs in Papierform bei einer CLOUDSTAFF-Einstellungsveranstaltung, einer Jobmesse oder im Büro;</li>
+                            <li>Versand Ihres Lebenslaufs per E-Mail an einen Berater oderInterview durch diesen;</li>
+                            <li>Bewerbung auf Stellen über einen Job-Aggregator, der Sie dann möglicherweise auf die CLOUDSTAFF-Website weiterleitet;</li>
+                            <li>Eingabe Ihrer persönlichen Daten auf einer CLOUDSTAFF-Microsite; oder</li>
+                            <li>Teilnahme an einem Wettbewerb über einen sozialen Medienkanal wie Facebook oder Twitter.</li>
+                        </ul>
+
+                        <p>Durch die Eingabe Ihrer Daten, stimmen Sie der Verarbeitung dieser durch CLOUDSTAFF zu. Sofern Sie keine Verarbeitung wünschen, bitten wir Sie, von der Eingabe Ihrer Daten auf den vorbeschriebenen Wegen abzusehen.</p>
+
+                        <h4>Personenbezogene Daten, die wir aus anderen Quellen erhalten</h4>
+                        <p>Wir erhalten auch personenbezogene Daten über Bewerber aus anderen Quellen. Abhängig von den jeweiligen Umständen und den geltenden lokalen Gesetzen und Anforderungen können dies personenbezogene Daten sein, die wir in den folgenden Situationen erhalten:</p>
+                        <ul>
+                            <li>Ihre Referenzpersonen können persönliche Informationen über Sie weitergeben;</li>
+                            <li>Unsere Kunden können persönliche Informationen über Sie an uns weitergeben;</li>
+                            <li>Wir können Informationen über Sie aus der Suche nach potenziellen Bewerbern aus Drittquellen wie LinkedIn und anderen Job-Websites erhalten;</li>
+                            <li>Wenn Sie unsere Seite auf Facebook "mögen" oder uns auf Twitter oder LinkedIn "folgen", erhalten wir Ihre personenbezogenen Daten von diesen Websites; und</li>
+                            <li>Wenn Sie über einen RPO oder einen MSP-Anbieter an uns verwiesen wurden, können diese personenbezogene Daten über Sie an uns weitergeben.</li>
+                        </ul>
+
+                        <h3>WEBSITE-BENUTZER</h3>
+                        <p>Wir verwenden Ihre Daten, um Ihre Erfahrungen bei der Nutzung unserer Website zu verbessern. So können wir z. B. eine Suchfunktion einrichten und Ihre letzten Suchkriterien analysieren, um Ihnen Stellen zu präsentieren, die für Sie von Interesse sein könnten.</p>
+
+                        <p>Wir sammeln Ihre Daten automatisch über Cookies, entsprechend den Cookie-Einstellungen in Ihrem Browser. Wenn Sie auch ein Kandidat von CLOUDSTAFF sind, können wir Daten aus Ihrer Nutzung unserer Websites verwenden, um andere Aspekte unserer Kommunikation mit Ihnen oder unserer Dienstleistungen für Sie zu verbessern. Wenn Sie mehr über Cookies erfahren möchten, einschließlich der Frage, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben, lesen Sie bitte weiter unten.</p>
+
+                        <h2>WARUM SAMMELT CLOUDSTAFF IHRE PERSÖNLICHEN DATEN UND WIE WERDEN SIE VERWENDET?</h2>
+                        <p>Nachdem wir Daten über Sie erhalten haben, verwenden wir sie auf verschiedene Weise.</p>
+
+                        <h3>Daten der Berater</h3>
+                        <p>Wir verwenden Daten unserer Berater im Allgemeinen auf folgenden Gründen:</p>
+                        <ul>
+                            <li>Aktivitäten zur Personalbeschaffung</li>
+                            <li>Marketing-Aktivitäten;</li>
+                            <li>Überwachung der Chancengleichheit;</li>
+                            <li>Um uns dabei zu helfen, Rechtsansprüche zu begründen, auszuüben oder zu verteidigen; und</li>
+                            <li>Verhaltensregeln 2003, in der jeweils gültigen Fassung.</li>
+                        </ul>
+
+                        <p>Unser Haupttätigkeitsbereich ist das Staffing bzw. die Vermittlung von Beratern – das bedeutet die richtigen Berater mit den richtigen Stellen zusammenzuführen. Im Folgenden haben wir verschiedene Möglichkeiten aufgelistet, wie wir Ihre personenbezogenen Daten zu diesem Zweck verwenden und verarbeiten können. Grundvoraussetzung hierfür ist, dass die Verarbeitung mit den gesetzlichen Bestimmungen übereinstimmt und angemessen ist. Bitte beachten Sie, dass diese Liste nicht abschließend ist:</p>
+
+                        <ul>
+                            <li>Erfassung Ihrer Daten, die wir von Ihnen oder anderen Quellen, wie z. B. LinkedIn, erhalten</li>
+                            <li>Speicherung Ihrer Daten (bzw. gegebenenfalls Aktualisierung dieser Daten) in unserer Datenbank, damit wir Sie im Zusammenhang mit der Vermittlung kontaktieren können;</li>
+                            <li>Bereitstellung unserer Vermittlungsdienste für Sie und Erleichterung des Rekrutierungsprozesses;</li>
+                            <li>Abgleich Ihrer Daten mit Stellenangeboten, die, unserer Meinung nach, für Sie geeignet sein könnten;</li>
+                            <li>Weitergabe Ihrer Daten an Kunden, um Sie für Stellen vorzuschlagen oder Ihre Eignung für eine Stelle zu prüfen (bitte beachten Sie, dass wir Sie nicht für eine oder mehrere Stellen vorschlagen werden, ohne zuvor Ihre ausdrückliche Einwilligung eingeholt zu haben);</li>
+                            <li>Ihnen die Möglichkeit zu geben, Ihren Lebenslauf einzureichen, sich online auf Stellen zu bewerben oder Benachrichtigungen über Stellen zu abonnieren, von denen wir glauben, dass sie für Sie von Interesse sein könnten;</li>
+                            <li>Ihnen die Teilnahme an speziellen Online-Schulungen zu ermöglichen;</li>
+                            <li>Ihnen die Teilnahme an den interaktiven Funktionen unseres Dienstes zu ermöglichen, wenn Sie dies wünschen;</li>
+                            <li>Erfüllung unserer Verpflichtungen, die sich aus den zwischen uns abgeschlossenen Verträgen ergeben;</li>
+                            <li>Erfüllung unserer Verpflichtungen, die sich aus Verträgen ergeben, die zwischen CLOUDSTAFF und Dritten im Zusammenhang mit Ihrer Einstellung geschlossen wurden;</li>
+                            <li>Erleichterung unserer Vergütungs- und Rechnungsstellungsprozesse;</li>
+                            <li>Durchführung von Umfragen zur Kundenzufriedenheit;</li>
+                            <li>Überprüfung der von Ihnen gemachten Angaben mit Hilfe von Ressourcen Dritter (z. B. psychometrische Bewertungen oder Kompetenztests) oder Anforderung von Informationen (z. B. Referenzen, Qualifikationen und möglicherweise Führungszeugnisse);</li>
+                            <li>Erfüllung unserer gesetzlichen Verpflichtungen (z. B. Einhaltung der Anti-Korruptions-Gesetzgebung); und</li>
+                            <li>Verarbeitung Ihrer Daten, um Ihnen gezielte, relevante Marketingmaterialien oder andere Mitteilungen zukommen zu lassen, von denen wir annehmen, dass sie für Sie von Interesse sein könnten.</li>
+                            <li>Einige Daten können von unserer internen AI (Künstliche Intelligenz) verwendet werden, die Profile für offene Stellen auswertet. Dabei handelt es sich um automatisiertes Profiling.</li>
+                        </ul>
+
+                        <h4>Was ist automatisiertes Profiling?</h4>
+                        <p>Dies ist der Fall, wenn Ihre Daten verwendet werden, um eine Entscheidung ausschließlich mit automatisierten Mitteln ohne menschliche Beteiligung zu treffen.</p>
+
+                        <h4>Warum verwenden wir es?</h4>
+                        <p>Wir hier bei CLOUDSTAFF möchten Ihnen die bestmögliche Stelle vermitteln. Um dies zu erreichen, nutzen wir automatisiertes Profiling und AI-Tools, um den Prozess zu rationalisieren und Sie so schnell wie möglich einem Recruiter vorzustellen.</p>
+
+                        <h4>Was wird damit erreicht?</h4>
+                        <p>Wir verwenden diese Tools, um eine möglichst geringe Voreingenommenheit zu gewährleisten und Ihnen die besten Erfolgschancen zu bieten. Dies wird dadurch erreicht, dass wir alle Daten aus dem Lebenslauf entfernen, die es jemandem ermöglichen könnte, sich eine voreingenommene Meinung zu bilden, die unserer Meinung nach bei der Einstellung eines Bewerbers nicht verwendet werden sollte, und die reinste Version Ihres Lebenslaufs präsentieren, die möglich ist.</p>
+
+                        <h4>Ist der gesamte Prozess automatisiert?</h4>
+                        <p>Nein, sobald die Informationen von Vorurteilen befreit sind, werden sie an einen menschlichen Recruiter weitergeleitet, der die Informationen bearbeitet. Ein rein automatisierter Prozess wird niemals zu einer Entscheidung für Ihre Bewerbung führen.</p>
+
+                        <h4>Haben Sie weitere Fragen zum Verfahren?</h4>
+                        <p>Wenn Sie gemäß der Datenschutzgrundverordnung (DSGVO) und dem Bundesdatenschutzgesetz (BDSG) Bedenken haben oder überprüfen möchten, wie Ihre Daten verwendet werden, wenden Sie sich bitte an den Datenschutzbeauftragten unter den unten angegebenen Kontaktdaten.</p>
+
+                        <p>Wir können Ihre personenbezogenen Daten für die oben genannten Zwecke verwenden, wenn wir dies für unsere berechtigten Interessen als notwendig erachten. Wenn Sie mehr darüber wissen möchten, was dies bedeutet, lesen Sie bitte weiter unten. Wenn Sie zu irgendeinem Zeitpunkt des Prozesses nicht mit CLOUDSTAFF als Datenverarbeiter für Einstellungszwecke bzw. Vermittlungszwecke zusammenarbeiten möchten, haben Sie gemäß DSGVO das Recht auf Vergessenwerden und die Beendigung der vertraglichen Beziehung. Wenn jedoch ein legitimes oder rechtliches Interesse von CLOUDSTAFF oder Dritten vorliegt, behalten wir uns das Recht vor, Ihre personenbezogenen Daten zu speichern. Bitte lesen Sie nachstehend, wie.</p>
+
+                        <h3>Marketing-Aktivitäten</h3>
+                        <p>Möglicherweise senden wir Ihnen in regelmäßigen Abständen Informationen zu, die für Sie interessant sein könnten, oder bitten Sie um Ihre Hilfe bei der Vermittlung von Stellen an andere Bewerber. Insbesondere können wir Ihre Daten für die unten aufgeführten Zwecke verwenden, sofern dies angemessen und in Übereinstimmung mit den örtlichen Gesetzen und Anforderungen ist. Bitte beachten Sie, dass diese Liste nicht erschöpfend ist. Diese Zwecke umfassen:</p>
+                        <ul>
+                            <li>die es uns ermöglichen, weitere Produkte und Dienstleistungen zu entwickeln und zu vermarkten;</li>
+                            <li>unser gesamtes Spektrum an Personalvermittlungsdiensten (Festanstellung, Zeitarbeit, Verträge, Outplacement, MSP-Programme und RPO-Dienste) zu vermarkten;</li>
+                            <li>Ihnen Informationen über Berichte, Werbeaktionen, Angebote, Networking- und Kundenveranstaltungen sowie allgemeine Informationen über die Branchen zukommen zu lassen, die für Sie von Interesse sein könnten;</li>
+                            <li>Analysen durchführen - z. B. Trends, Vertriebsinformationen, Marketingeffektivität (z. B. Klick- und Öffnungsraten), Akzeptanz und Fortschritte; und</li>
+                            <li>Werbeauszüge aus Ihren Angaben auf der/den CLOUDSTAFF-Website(s) als Fallstudie anzeigen (nur wenn wir Ihre ausdrückliche Zustimmung dazu erhalten haben).</li>
+                        </ul>
+
+                        <p>Für einige Aspekte dieser Aktivitäten, die nicht durch unsere legitimen Interessen abgedeckt sind, benötigen wir Ihre Zustimmung (insbesondere für die Erfassung von Daten über Cookies und die Übermittlung von Direktmarketing an Sie über digitale Kanäle). Bitte beachten Sie, dass wir in einigen der Länder, in denen wir tätig sind, zusätzliche lokale gesetzliche Anforderungen erfüllen.</p>
+
+                        <p>Die "Soft Opt-in"-Einwilligung ist eine besondere Art der Einwilligung, die dann gilt, wenn Sie bereits mit uns in Kontakt getreten sind (z. B. durch Einreichen einer Bewerbung oder eines Lebenslaufs oder durch Registrierung für eine zu besetzende Stelle) und wir andere personalbezogene Dienstleistungen anbieten. Bei der "Soft Opt-in"-Einwilligung gehen wir davon aus, dass Ihre Zustimmung vorliegt, bis Sie sich dagegen entscheiden. Für die meisten Menschen ist dies von Vorteil, da wir Ihnen so neben der Stelle, auf die Sie sich beworben haben, auch andere Stellen vorschlagen können, was die Wahrscheinlichkeit, dass wir eine neue Stelle für Sie finden, deutlich erhöht. Für andere Arten des E-Marketings müssen wir Ihre ausdrückliche Zustimmung einholen.</p>
+
+                        <p>Wenn Sie mit unserem Marketingansatz nicht einverstanden sind, haben Sie das Recht, Ihre Zustimmung jederzeit zu widerrufen. Wir möchten Sie darauf hinweisen, dass es selbst dann, wenn Sie sich über unser Präferenzzentrum von unseren Marketingmitteilungen abgemeldet haben, möglich ist, dass Ihre Daten über öffentliche Quellen in einer nicht damit verbundenen Marketingkampagne wiedergefunden werden. Wir versuchen sicherzustellen, dass dies nicht passiert, aber wenn es doch passiert, tut es uns leid. Wir möchten Sie bitten, sich unter diesen Umständen wieder abzumelden.</p>
+
+                        <h3>Überwachung der Chancengleichheit und andere sensible persönliche Daten</h3>
+                        <p>Wir verpflichten uns, sicherzustellen, dass unsere Einstellungsverfahren mit unserem Ansatz der Chancengleichheit übereinstimmen. Einige der Daten, die wir (unter bestimmten Umständen und in Übereinstimmung mit den lokalen Gesetzen und Anforderungen) über Sie erheben können, fallen unter den Begriff "Informationen zur Vielfalt". Dabei kann es sich um Informationen über Ihre ethnische Herkunft, Ihr Geschlecht, Ihre Behinderung, Ihr Alter, Ihre sexuelle Orientierung, Ihre Religion oder andere ähnliche Überzeugungen und/oder Ihren sozioökonomischen Hintergrund handeln. Gegebenenfalls und in Übereinstimmung mit den lokalen Gesetzen und Anforderungen werden wir diese Informationen auf anonymisierter Basis verwenden, um die Einhaltung unserer Politik der Chancengleichheit zu überwachen. Wir können diese (gegebenenfalls angemessen anonymisierten) Daten auch an Kunden weitergeben, wenn dies vertraglich vorgeschrieben ist oder wenn der Kunde solche Informationen ausdrücklich anfordert, um seine eigenen Beschäftigungsprozesse zu erfüllen.</p>
+
+                        <p>Bei diesen Informationen handelt es sich um so genannte "sensible" personenbezogene Daten, für die etwas strengere Datenschutzbestimmungen gelten. Wir müssen daher Ihre ausdrückliche Zustimmung einholen, bevor wir sie verwenden können. Wir werden Sie um Ihre Zustimmung bitten, indem wir Ihnen ein Opt-in anbieten. Das bedeutet, dass Sie uns ausdrücklich und klar mitteilen müssen, dass Sie mit der Erfassung und Verwendung dieser Daten einverstanden sind.</p>
+
+                        <p>Wir können weitere sensible personenbezogene Daten über Sie erheben, z. B. Informationen über Ihre Gesundheit, Ihre Religionszugehörigkeit oder Angaben zu Vorstrafen, wenn dies im Einklang mit den örtlichen Gesetzen angemessen ist und für die Stelle, für die Sie sich bewerben möchten, erforderlich ist. Wir werden dies niemals ohne Ihre ausdrückliche Zustimmung tun.</p>
+
+                        <p>Bitte beachten Sie, dass in einigen der Länder, in denen wir tätig sind, andere Vorschriften für diese sensiblen Daten gelten.</p>
+
+                        <p>Sollten Sie damit nicht einverstanden sein, haben Sie das Recht, Ihre Zustimmung jederzeit zu widerrufen.</p>
+
+                        <h3>Um uns bei der Begründung, Ausübung oder Verteidigung von Rechtsansprüchen zu helfen</h3>
+                        <p>In Einzelfällen können wir Ihre personenbezogenen Daten verwenden, um uns bei der Begründung, Ausübung oder Verteidigung etwaiger Rechtsansprüche zu unterstützen.</p>
+
+                        <h3>LIEFERANTEN-DATEN</h3>
+                        <p>Wir werden Ihre Informationen nur verwenden:</p>
+                        <ul>
+                            <li>Um Ihre Angaben in unserer Datenbank zu speichern (und gegebenenfalls zu aktualisieren), damit wir Sie im Zusammenhang mit unseren Vereinbarungen kontaktieren können;</li>
+                            <li>Um Ihnen Dienstleistungen anbieten oder um Unterstützung und Dienstleistungen von Ihnen zu erhalten;</li>
+                            <li>Zur Erfüllung bestimmter rechtlicher Verpflichtungen;</li>
+                            <li>um uns dabei zu helfen, geeignete Marketingkampagnen durchzuführen; und</li>
+                            <li>Unter ungewöhnlicheren Umständen, um uns bei der Begründung, Ausübung oder Verteidigung von Rechtsansprüchen zu helfen.</li>
+                        </ul>
+
+                        <p>Wir können Ihre personenbezogenen Daten für diese Zwecke verwenden, wenn wir dies für unsere berechtigten Interessen als notwendig erachten. Wenn Sie mehr darüber wissen möchten, was das bedeutet, lesen Sie bitte weiter unten.</p>
+
+                        <p>Es ist nicht selbstverständlich, dass wir Sie um Ihre Zustimmung bitten, wenn wir Marketingnachrichten an eine Post- oder E-Mail-Adresse eines Unternehmens senden. Wenn Sie damit nicht einverstanden sind, haben Sie unter bestimmten Umständen das Recht, Widerspruch einzulegen.</p>
+
+                        <h3>WEBSITE-BENUTZER</h3>
+                        <p>Wir verwenden Ihre Daten, um Ihre Erfahrungen bei der Nutzung unserer Website zu verbessern. So können wir z. B. eine Suchfunktion einrichten und Ihre letzten Suchkriterien analysieren, um Ihnen Stellen zu präsentieren, die für Sie von Interesse sein könnten.</p>
+
+                        <div class="privacy-content-section">
+                            <h2>UNSERE RECHTSGRUNDLAGEN FÜR DIE VERARBEITUNG IHRER DATEN</h2>
+                            
+                            <h3>Berechtigte Interessen</h3>
+                            <p><strong>UNSERE RECHTSGRUNDLAGEN FÜR DIE VERARBEITUNG IHRER DATEN?</strong><br>
+Berechtigte Interessen<br>
+Artikel 6 Absatz 1 Buchstabe f der DSGVO ist hier relevant - er besagt, dass wir Ihre Daten verarbeiten dürfen, wenn dies "zur Wahrung der berechtigten Interessen [von uns] oder eines Dritten erforderlich ist, sofern nicht die Interessen oder Grundrechte und Grundfreiheiten [von Ihnen], die den Schutz personenbezogener Daten erfordern, überwiegen."<br>
+Wir sind der Meinung, dass keine der folgenden Aktivitäten den Einzelnen in irgendeiner Weise benachteiligt - im Gegenteil, sie helfen uns, Ihnen einen maßgeschneiderten, effizienten Service zu bieten, so dass alle davon profitieren! Sie haben jedoch das Recht, der Verarbeitung Ihrer personenbezogenen Daten auf dieser Grundlage zu widersprechen.<br>
+Bitte beachten Sie, dass in einigen der Länder, in denen wir tätig sind, in bestimmten Fällen eine andere Rechtsgrundlage für die Datenverarbeitung gelten kann.</p>
+
+                            <h3>KANDIDATENDATEN</h3>
+                            <p><strong>KANDIDATENDATEN</strong><br>
+Sofern wir Ihren Lebenslauf durch einen Dritten, eine Job-Platform oder einer Webseite, die ein zum Ziel hat eine berufliches Netzwerk aufbauen zu können und wir der Auffassung sind, dass Sie zu einer offenen Stelle passen würden, treten wir mit Ihnen in Kontakt und fragen an, ob wir Ihre Daten verarbeiten können und Sie als Kandidaten aufnehmen können.<br>
+Wenn es so aussieht, als ob Sie die Stelle bekommen könnten, möchte Ihr potenzieller Arbeitgeber möglicherweise auch Informationen, die Sie uns gegeben haben, überprüfen (z. B. die Ergebnisse psychometrischer Auswertungen oder Kompetenztests) oder Ihre Referenzen, Qualifikationen und Ihr Strafregister bestätigen, soweit dies angemessen und im Einklang mit den örtlichen Gesetzen ist. Wir müssen diese Dinge tun, damit wir als gewinnorientiertes Unternehmen arbeiten können und Ihnen und anderen Bewerbern helfen können, die Stellen zu bekommen, die Sie verdienen.<br>
+Wir möchten Ihnen maßgeschneiderte Jobempfehlungen und relevante Artikel zur Verfügung stellen, die Sie bei Ihrer Stellensuche unterstützen. Daher halten wir es für angemessen, Ihre Daten zu verarbeiten, um sicherzustellen, dass wir Ihnen die am besten geeigneten Inhalte zusenden.<br>
+Wir glauben auch, dass es Ihnen bei Ihrer Stellensuche helfen könnte, wenn Sie an unseren speziellen Online-Schulungen oder einigen unserer interaktiven Dienste teilnehmen, sofern Sie die Zeit dazu haben. Diese sind Teil unseres Dienstleistungsangebots als Unternehmen und tragen dazu bei, uns auf einem wettbewerbsintensiven Markt zu differenzieren, so dass es in unserem legitimen Interesse liegt, Ihre Daten aus diesem Grund zu verwenden.<br>
+Wir müssen sicherstellen, dass unser Geschäft reibungslos läuft, damit wir Bewerbern wie Ihnen weiterhin Dienstleistungen anbieten können. Daher müssen wir Ihre Daten auch für unsere internen Verwaltungstätigkeiten verwenden, z. B. für die Gehaltsabrechnung und gegebenenfalls die Rechnungsstellung.<br>
+Wir haben unsere eigenen gesetzlichen Verpflichtungen, auf deren Einhaltung wir in unserem berechtigten Interesse bestehen müssen! Wenn wir in gutem Glauben davon ausgehen, dass es notwendig ist, können wir daher Ihre Daten im Zusammenhang mit der Aufdeckung von Straftaten, der Steuererhebung oder tatsächlichen oder erwarteten Rechtsstreitigkeiten weitergeben.</p>
+                        </div>
+                    </div>
+
+                    <div class="privacy-content-section">
+                        <h2>WIE SCHÜTZEN WIR IHRE PERSONENBEZOGENEN DATEN?</h2>
+                        <p>Wir verpflichten uns, alle angemessenen und geeigneten Schritte zu unternehmen, um die in unserem Besitz befindlichen personenbezogenen Daten vor Missbrauch, Verlust oder unbefugtem Zugriff zu schützen. Zu diesem Zweck haben wir eine Reihe von technischen und organisatorischen Maßnahmen getroffen. Dazu gehören auch Maßnahmen für den Fall einer vermuteten Datenverletzung.</p>
+
+                        <p>Wenn Sie den Verdacht haben, dass Ihre persönlichen Daten missbraucht werden, verloren gegangen sind oder Unbefugte darauf zugreifen, teilen Sie uns dies bitte unverzüglich mit. Wie Sie uns kontaktieren können, erfahren Sie weiter unten.</p>
+                    </div>
+
+                    <div class="privacy-content-section">
+                        <h2>WIE LANGE BEWAHREN WIR IHRE PERSONENBEZOGENEN DATEN AUF?</h2>
+                        <p>Wir sind uns unserer gesetzlichen Verpflichtung bewusst, Daten ordnungsgemäß aufzubewahren und personenbezogene Daten maximal bis zu 6 Jahre zu speichern, wenn Sie hiermit einverstanden sind.  Dementsprechend verfügen wir über einen Hinweis zur Vorratsdatenspeicherung, der auf Anfrage erhältlich ist, und führen Datenentfernungsroutinen aus.</p>
+
+                        <p>Wir trennen unsere Daten, so dass wir verschiedene Arten von Daten für verschiedene Zeiträume aufbewahren. Zu den Kriterien, die wir verwenden, um festzustellen, ob wir Ihre personenbezogenen Daten aufbewahren, gehören:</p>
+                        <ul>
+                            <li>die Art der personenbezogenen Daten;</li>
+                            <li>unsere gesetzlichen Verpflichtungen;</li>
+                            <li>ob ein Vorstellungsgespräch oder eine Vermittlung vereinbart wurde; und</li>
+                            <li>unsere Rekrutierungsexpertise und unser Branchenwissen nach Land, Sektor und Jobrolle.</li>
+                        </ul>
+
+                        <p>Wir speichern Ihre Daten auf folgende Weise:</p>
+                        <ul>
+                            <li>Wir können einen Teil oder alle Ihre personenbezogenen Daten archivieren, nur in unseren Finanzsystemen aufbewahren oder alle oder einen Teil der Daten aus unserem wichtigsten Customer Relationship Manager (CRM) -System löschen.</li>
+                            <li>Wir können Teile Ihrer Daten pseudonymisieren, insbesondere nach einem Antrag auf Einschränkung oder Löschung Ihrer Daten, um sicherzustellen, dass wir Ihre personenbezogenen Daten nicht erneut in unsere Datenbank eingeben, es sei denn, wir werden von Ihnen dazu aufgefordert.</li>
+                        </ul>
+
+                        <p><strong>UNSERE RECHTSGRUNDLAGEN FÜR DIE VERARBEITUNG IHRER DATEN?</strong><br>
+Berechtigte Interessen<br>
+Artikel 6 Absatz 1 Buchstabe f der DSGVO ist hier relevant - er besagt, dass wir Ihre Daten verarbeiten dürfen, wenn dies "zur Wahrung der berechtigten Interessen [von uns] oder eines Dritten erforderlich ist, sofern nicht die Interessen oder Grundrechte und Grundfreiheiten [von Ihnen], die den Schutz personenbezogener Daten erfordern, überwiegen."<br>
+Wir sind der Meinung, dass keine der folgenden Aktivitäten den Einzelnen in irgendeiner Weise benachteiligt - im Gegenteil, sie helfen uns, Ihnen einen maßgeschneiderten, effizienten Service zu bieten, so dass alle davon profitieren! Sie haben jedoch das Recht, der Verarbeitung Ihrer personenbezogenen Daten auf dieser Grundlage zu widersprechen.<br>
+Bitte beachten Sie, dass in einigen der Länder, in denen wir tätig sind, in bestimmten Fällen eine andere Rechtsgrundlage für die Datenverarbeitung gelten kann.</p>
+
+                        <p><em>KANDIDATENDATEN</em><br>
+Sofern wir Ihren Lebenslauf durch einen Dritten, eine Job-Plattform oder eine Webseite erhalten, die zum Ziel hat, ein berufliches Netzwerk aufzubauen, und wir der Auffassung sind, dass Sie zu einer offenen Stelle passen könnten, treten wir mit Ihnen in Kontakt und fragen an, ob wir Ihre Daten verarbeiten und Sie als Kandidaten aufnehmen dürfen.<br><br>
+Wenn es so aussieht, als ob Sie die Stelle bekommen könnten, möchte Ihr potenzieller Arbeitgeber möglicherweise auch Informationen, die Sie uns gegeben haben, überprüfen (z. B. die Ergebnisse psychometrischer Auswertungen oder Kompetenztests) oder Ihre Referenzen, Qualifikationen und Ihr Strafregister bestätigen, soweit dies angemessen und im Einklang mit den örtlichen Gesetzen ist. Wir müssen diese Dinge tun, damit wir als gewinnorientiertes Unternehmen arbeiten können und Ihnen und anderen Bewerbern helfen können, die Stellen zu bekommen, die Sie verdienen.<br><br>
+Wir möchten Ihnen maßgeschneiderte Jobempfehlungen und relevante Artikel zur Verfügung stellen, die Sie bei Ihrer Stellensuche unterstützen. Daher halten wir es für angemessen, Ihre Daten zu verarbeiten, um sicherzustellen, dass wir Ihnen die am besten geeigneten Inhalte zusenden.<br><br>
+Wir glauben auch, dass es Ihnen bei Ihrer Stellensuche helfen könnte, wenn Sie an unseren speziellen Online-Schulungen oder einigen unserer interaktiven Dienste teilnehmen, sofern Sie die Zeit dazu haben. Diese sind Teil unseres Dienstleistungsangebots als Unternehmen und tragen dazu bei, uns auf einem wettbewerbsintensiven Markt zu differenzieren, sodass es in unserem legitimen Interesse liegt, Ihre Daten aus diesem Grund zu verwenden.<br><br>
+Wir müssen sicherstellen, dass unser Geschäft reibungslos läuft, damit wir Bewerbern wie Ihnen weiterhin Dienstleistungen anbieten können. Daher müssen wir Ihre Daten auch für unsere internen Verwaltungstätigkeiten verwenden, z. B. für die Gehaltsabrechnung und gegebenenfalls die Rechnungsstellung.<br><br>
+Wir haben unsere eigenen gesetzlichen Verpflichtungen, auf deren Einhaltung wir in unserem berechtigten Interesse bestehen müssen. Wenn wir in gutem Glauben davon ausgehen, dass es notwendig ist, können wir daher Ihre Daten im Zusammenhang mit der Aufdeckung von Straftaten, der Steuererhebung oder tatsächlichen oder erwarteten Rechtsstreitigkeiten weitergeben.</p>
+
+                        <p><em>LIEFERANTEN-DATEN</em><br>
+Wir verwenden und speichern die personenbezogenen Daten von Personen innerhalb Ihrer Organisation, um den Erhalt von Dienstleistungen von Ihnen als einem unserer Lieferanten zu erleichtern. Wir speichern auch Ihre finanziellen Daten, damit wir Sie für Ihre Dienstleistungen bezahlen können. Wir erachten all diese Aktivitäten als notwendig im Rahmen unserer berechtigten Interessen als Empfänger Ihrer Dienstleistungen.<br><br>
+<em>Zustimmung</em><br>
+Unter bestimmten Umständen sind wir verpflichtet, Ihre Zustimmung zur Verarbeitung Ihrer personenbezogenen Daten im Zusammenhang mit bestimmten Aktivitäten einzuholen. Je nachdem, was genau wir mit Ihren Daten tun, handelt es sich bei dieser Einwilligung um eine Opt-in-Einwilligung oder eine Soft-Opt-in-Einwilligung.<br><br>
+Artikel 4 Absatz 11 der DSGVO besagt, dass eine (Opt-in)-Einwilligung "jede Willensbekundung ist, die ohne Zwang, für den konkreten Fall, in Kenntnis der Sachlage und auf eindeutige Weise erfolgt und mit der die betroffene Person durch eine Erklärung oder eine eindeutige bestätigende Handlung ihr Einverständnis mit der Verarbeitung der sie betreffenden personenbezogenen Daten zum Ausdruck bringt". Im Klartext bedeutet dies:<br><br>
+&bull; Sie müssen uns Ihre Zustimmung freiwillig geben, ohne dass wir Sie in irgendeiner Weise unter Druck setzen;<br>
+&bull; Sie müssen wissen, worauf Sie sich einlassen - deshalb werden wir dafür sorgen, dass Sie ausreichend informiert werden;<br>
+&bull; Sie sollten die Kontrolle darüber haben, in welche Verarbeitungstätigkeiten Sie einwilligen und in welche Sie nicht einwilligen.<br><br>
+Wir stellen diese genaueren Kontrollen in unserem Datenschutzzentrum zur Verfügung, und Sie müssen uns Ihre Zustimmung durch eine positive und bestätigende Handlung erteilen.<br><br>
+Wir werden Aufzeichnungen über die von Ihnen auf diese Weise erteilten Einwilligungen führen.<br><br>
+Wir haben bereits erwähnt, dass wir uns in einigen Fällen auf eine weiche Opt-In Zustimmung stützen können. Wir dürfen Ihnen Produkte oder Dienstleistungen anbieten, die mit den von uns angebotenen Personalvermittlungsdiensten in Zusammenhang stehen, solange Sie sich nicht aktiv gegen diese Mitteilungen entscheiden.<br><br>
+Bitte beachten Sie, dass wir in einigen der Länder, in denen wir tätig sind, zusätzliche lokale gesetzliche Bestimmungen bezüglich der Zustimmung zum Erhalt von Marketingmaterial einhalten müssen.<br><br>
+Wie wir bereits erwähnt haben, haben Sie das Recht, Ihre Zustimmung zu diesen Aktivitäten zu widerrufen. Sie können dies jederzeit tun.<br><br>
+<em>Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen</em><br>
+Gelegentlich kann es erforderlich sein, dass wir personenbezogene Daten und gegebenenfalls im Einklang mit den lokalen Gesetzen und Anforderungen sensible personenbezogene Daten im Zusammenhang mit der Geltendmachung oder Verteidigung von Rechtsansprüchen verarbeiten. Artikel 9 Absatz 2 Buchstabe f der DSGVO erlaubt dies, wenn die Verarbeitung "für die Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder für die Tätigkeit der Gerichte in Ausübung ihrer Rechtsprechungsbefugnisse erforderlich ist".<br><br>
+Dies kann z. B. der Fall sein, wenn wir im Zusammenhang mit einem Gerichtsverfahren einen Rechtsbeistand hinzuziehen müssen oder gesetzlich verpflichtet sind, bestimmte Informationen im Rahmen eines Gerichtsverfahrens aufzubewahren oder offenzulegen.<br><br>
+<em>WIE KÖNNEN SIE AUF DIE PERSONENBEZOGENEN DATEN, DIE SIE CLOUDSTAFF GEGEBEN HABEN, ZUGREIFEN, SIE ÄNDERN ODER ZURÜCKNEHMEN?</em><br>
+Eines der Hauptziele der Datenschutz-Grundverordnung ist der Schutz und die Klärung der Rechte von EU-Bürgern und Einzelpersonen in der EU in Bezug auf den Datenschutz. Dies bedeutet, dass Sie verschiedene Rechte in Bezug auf Ihre Daten haben, auch wenn Sie sie uns zur Verfügung gestellt haben. Diese werden im Folgenden ausführlicher beschrieben.<br><br>
+Wenn Sie sich über diese Rechte informieren möchten, nehmen Sie bitte Kontakt mit uns auf. Wir werden uns nach besten Kräften bemühen, Ihre Anfrage ohne unangemessene Verzögerung und in jedem Fall innerhalb eines Monats zu bearbeiten (vorbehaltlich etwaiger Verlängerungen, zu denen wir rechtmäßig berechtigt sind). Bitte beachten Sie, dass wir Ihre Mitteilungen aufbewahren können, um uns bei der Lösung der von Ihnen angesprochenen Probleme zu helfen.<br><br>
+<em>Widerspruchsrecht:</em> Dieses Recht ermöglicht es Ihnen, der Verarbeitung Ihrer personenbezogenen Daten durch CLOUDSTAFF zu widersprechen, wenn CLOUDSTAFF dies aus einem der folgenden vier Gründe tut: (i) berechtigte Interessen von CLOUDSTAFF; (ii) um CLOUDSTAFF in die Lage zu versetzen, eine Aufgabe im öffentlichen Interesse zu erfüllen oder öffentliche Gewalt auszuüben; (iii) um Ihnen Direktmarketingmaterial zuzusenden; und (iv) für wissenschaftliche, historische, Forschungs- oder statistische Zwecke.<br><br>
+Die oben genannte Kategorie "berechtigte Interessen" ist diejenige, die am ehesten auf unsere Bewerber und Lieferanten zutrifft. Wenn sich Ihr Widerspruch darauf bezieht, dass wir Ihre personenbezogenen Daten verarbeiten, weil wir dies für Ihre berechtigten Interessen als notwendig erachten, müssen wir auf Ihren Widerspruch reagieren, indem wir die betreffende Tätigkeit einstellen, es sei denn:<br><br>
+&bull; wir nachweisen können, dass wir zwingende berechtigte Gründe für die Verarbeitung haben, die Ihre Interessen überwiegen; oder<br>
+&bull; wir Ihre Daten für die Begründung, Ausübung oder Verteidigung eines Rechtsanspruchs verarbeiten.<br><br>
+Wenn Sie ein Website-Nutzer sind und Ihr Widerspruch sich auf Direktmarketing bezieht, müssen wir auf Ihren Widerspruch reagieren, indem wir diese Aktivität einstellen.<br><br>
+<em>Recht auf Widerruf der Einwilligung:</em> Wenn wir Ihre Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten für bestimmte Tätigkeiten (z. B. für unsere Marketingmaßnahmen oder die automatische Profilerstellung) erhalten haben, können Sie diese Einwilligung jederzeit widerrufen, und wir werden die Durchführung der jeweiligen Tätigkeit, der Sie zuvor zugestimmt haben, einstellen, es sei denn, wir sind der Ansicht, dass es einen alternativen Grund gibt, der die weitere Verarbeitung Ihrer Daten für diesen Zweck rechtfertigt; in diesem Fall werden wir Sie über diese Bedingung informieren.<br><br>
+<em>Anträge auf Datenzugang (DSAR):</em> Sie können uns jederzeit um eine Bestätigung bitten, welche Informationen wir über Sie gespeichert haben, und uns auffordern, diese Informationen zu ändern, zu aktualisieren oder zu löschen. Wir können Sie bitten, Ihre Identität zu bestätigen und weitere Informationen über Ihre Anfrage zu erhalten. Wenn wir Ihnen Zugang zu den Informationen gewähren, die wir über Sie gespeichert haben, stellen wir Ihnen dafür keine Gebühren in Rechnung, es sei denn, Ihre Anfrage ist "offensichtlich unbegründet oder übertrieben". Wenn Sie weitere Kopien dieser Informationen bei uns anfordern, können wir Ihnen, soweit gesetzlich zulässig, eine angemessene Gebühr in Rechnung stellen.<br><br>
+Wenn wir rechtlich dazu befugt sind, können wir Ihren Antrag ablehnen. Wenn wir Ihren Antrag ablehnen, werden wir Ihnen stets die Gründe dafür mitteilen.<br><br>
+Bitte beachten Sie, dass wir in einigen der Länder, in denen wir tätig sind, zusätzliche örtliche gesetzliche Anforderungen in Bezug auf Anträge auf Zugang zu Daten erfüllen und Ihren Antrag in Übereinstimmung mit diesen Gesetzen ablehnen können.<br><br>
+<em>Recht auf Löschung:</em> Sie haben das Recht, unter bestimmten Umständen zu verlangen, dass wir Ihre personenbezogenen Daten löschen. Normalerweise müssen die Informationen eines der folgenden Kriterien erfüllen:<br><br>
+&bull; die Daten für den Zweck, für den wir sie ursprünglich erhoben und/oder verarbeitet haben, nicht mehr erforderlich sind;<br>
+&bull; Sie haben Ihre Zustimmung zur Verarbeitung Ihrer Daten widerrufen und es gibt keinen anderen triftigen Grund für die weitere Verarbeitung;<br>
+&bull; die Daten unrechtmäßig verarbeitet wurden (d. h. in einer Weise, die nicht mit der DSGVO vereinbar ist);<br>
+&bull; die Löschung der Daten erforderlich ist, damit wir unseren gesetzlichen Verpflichtungen als für die Verarbeitung Verantwortlicher nachkommen können, oder<br>
+&bull; wenn wir die Daten verarbeiten, weil wir glauben, dass dies für unsere berechtigten Interessen notwendig ist, Sie der Verarbeitung widersprechen und wir keine zwingenden berechtigten Gründe für unsere weitere Verarbeitung nachweisen können.<br><br>
+Bitte beachten Sie, dass wir in einigen der Länder, in denen wir tätig sind, zusätzliche örtliche gesetzliche Anforderungen in Bezug auf das Recht der Betroffenen auf Löschung erfüllen und Ihre Anfrage in Übereinstimmung mit den örtlichen Gesetzen ablehnen können.<br><br>
+Wir sind nur aus einem der folgenden Gründe berechtigt, Ihrem Antrag nicht stattzugeben:<br><br>
+&bull; das Recht auf freie Meinungsäußerung und Informationsfreiheit auszuüben;<br>
+&bull; zur Erfüllung gesetzlicher Verpflichtungen oder zur Wahrnehmung einer Aufgabe von öffentlichem Interesse oder zur Ausübung öffentlicher Gewalt;<br>
+&bull; aus Gründen der öffentlichen Gesundheit im öffentlichen Interesse;<br>
+&bull; zu Archivierungs-, Forschungs- oder statistischen Zwecken; oder um einen Rechtsanspruch geltend zu machen oder zu verteidigen.<br><br>
+Wenn wir einem berechtigten Antrag auf Löschung von Daten nachkommen, werden wir alle vernünftigerweise durchführbaren Schritte unternehmen, um die betreffenden Daten zu löschen.<br><br>
+<em>Recht auf Einschränkung der Verarbeitung:</em> Sie haben das Recht zu verlangen, dass wir die Verarbeitung Ihrer personenbezogenen Daten unter bestimmten Umständen einschränken. Das bedeutet, dass wir Ihre Daten nur weiter speichern und keine weiteren Verarbeitungstätigkeiten mit ihnen durchführen können, bis entweder: (i) einer der unten aufgeführten Umstände geklärt ist; (ii) Sie Ihre Einwilligung geben; oder (iii) die weitere Verarbeitung entweder für die Begründung, Ausübung oder Verteidigung von Rechtsansprüchen, den Schutz der Rechte einer anderen Person oder aus Gründen eines wichtigen öffentlichen Interesses der EU oder eines Mitgliedstaats erforderlich ist.<br><br>
+Sie können unter folgenden Umständen verlangen, dass wir die Verarbeitung Ihrer personenbezogenen Daten einschränken:<br><br>
+&bull; wenn Sie die Richtigkeit der personenbezogenen Daten, die wir über Sie verarbeiten, bestreiten. In diesem Fall wird unsere Verarbeitung Ihrer personenbezogenen Daten für den Zeitraum, in dem die Richtigkeit der Daten überprüft wird, eingeschränkt;<br>
+&bull; wenn Sie gegen die Verarbeitung Ihrer personenbezogenen Daten aufgrund unserer berechtigten Interessen Widerspruch einlegen. In diesem Fall können Sie beantragen, dass die Daten eingeschränkt werden, während wir unsere Gründe für die Verarbeitung Ihrer personenbezogenen Daten überprüfen;<br>
+&bull; wenn unsere Verarbeitung Ihrer Daten rechtswidrig ist, Sie es aber vorziehen, dass wir die Verarbeitung einschränken, anstatt sie zu löschen; und<br>
+&bull; wenn wir keine Notwendigkeit mehr haben, Ihre personenbezogenen Daten zu verarbeiten, Sie die Daten aber zur Begründung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen.<br><br>
+Wenn wir Ihre personenbezogenen Daten an Dritte weitergegeben haben, werden wir diese über die eingeschränkte Verarbeitung informieren, es sei denn, dies ist unmöglich oder mit unverhältnismäßigem Aufwand verbunden. Wir werden Sie selbstverständlich benachrichtigen, bevor wir eine Einschränkung der Verarbeitung Ihrer personenbezogenen Daten aufheben.<br><br>
+<em>Recht auf Berichtigung:</em> Sie haben auch das Recht zu verlangen, dass wir unrichtige oder unvollständige personenbezogene Daten, die wir über Sie gespeichert haben, berichtigen. Wenn wir diese personenbezogenen Daten an Dritte weitergegeben haben, werden wir diese über die Berichtigung informieren, es sei denn, dies ist unmöglich oder mit unverhältnismäßigem Aufwand verbunden. Gegebenenfalls teilen wir Ihnen auch mit, an welche Dritten wir die unrichtigen oder unvollständigen personenbezogenen Daten weitergegeben haben. Wenn wir der Meinung sind, dass es angemessen ist, Ihrem Ersuchen nicht nachzukommen, werden wir unsere Gründe für diese Entscheidung erläutern.<br><br>
+Es ist wichtig, dass die persönlichen Daten, die wir über Sie gespeichert haben, korrekt und aktuell sind. Bitte informieren Sie uns, wenn sich Ihre persönlichen Daten während des Zeitraums, in dem wir sie speichern, ändern.<br><br>
+<em>Recht auf Datenübertragbarkeit:</em> Wenn Sie es wünschen, haben Sie das Recht, Ihre personenbezogenen Daten zwischen den für die Datenverarbeitung Verantwortlichen zu übertragen. Konkret bedeutet dies, dass Sie Ihre CLOUDSTAFF-Kontodaten auf eine andere Online-Plattform übertragen können. Um Ihnen dies zu ermöglichen, stellen wir Ihnen Ihre Daten in einem gängigen, maschinenlesbaren und passwortgeschützten Format zur Verfügung, damit Sie die Daten auf eine andere Online-Plattform übertragen können. Alternativ können wir die Daten auch direkt für Sie übertragen. Dieses Recht auf Datenübertragbarkeit gilt für: (i) personenbezogene Daten, die wir automatisch (d. h. ohne menschliches Zutun) verarbeiten; (ii) personenbezogene Daten, die Sie uns zur Verfügung stellen; und (iii) personenbezogene Daten, die wir aufgrund Ihrer Einwilligung oder zur Erfüllung eines Vertrags verarbeiten.<br><br>
+<em>Recht auf Beschwerde bei einer Aufsichtsbehörde:</em> Sie haben auch das Recht, eine Beschwerde bei Ihrer örtlichen Aufsichtsbehörde einzureichen. Einzelheiten zur Kontaktaufnahme finden Sie unter Kontakte unten.<br><br>
+Wenn Sie eines dieser Rechte ausüben oder Ihre Einwilligung in die Verarbeitung Ihrer personenbezogenen Daten widerrufen möchten (sofern die Einwilligung unsere Rechtsgrundlage für die Verarbeitung Ihrer personenbezogenen Daten ist), wenden Sie sich bitte an uns. Bitte beachten Sie, dass wir Ihre Mitteilungen aufbewahren können, um uns bei der Lösung der von Ihnen angesprochenen Probleme zu helfen.<br><br>
+Vergessen Sie nicht, dass Sie sich jederzeit von den Job Alerts abmelden können. Wenden Sie sich einfach über die unten angegebenen Kontaktdaten an uns.<br><br>
+<em>WIE SPEICHERN UND ÜBERMITTELN WIR IHRE DATEN INTERNATIONAL?</em><br>
+Um Ihnen den bestmöglichen Service zu bieten und die in dieser Datenschutzrichtlinie beschriebenen Zwecke zu erfüllen, können Ihre Daten übermittelt werden:<br><br>
+&bull; zwischen und innerhalb von CLOUDSTAFF-Unternehmen;<br>
+&bull; an Dritte (einschließlich, aber nicht beschränkt auf Berater oder andere Lieferanten des CLOUDSTAFF-Geschäfts);<br>
+&bull; an Kunden im Ausland;<br>
+&bull; an Kunden in Ihrem Land, die wiederum Ihre Daten ins Ausland übermitteln können;<br>
+&bull; zu einem Cloud-basierten Speicheranbieter.<br><br>
+Wir möchten sicherstellen, dass Ihre Daten auf sichere Weise gespeichert und übertragen werden. Wir und/oder die Dritten, an die wir Ihre persönlichen Daten weitergeben, können Ihre persönlichen Daten auf einem Server im Ausland speichern. Indem Sie uns Ihre persönlichen Daten zur Verfügung stellen, erklären Sie sich damit einverstanden, dass Ihre Daten an Server in Übersee übertragen werden können. Wir werden jedoch nur dann Daten außerhalb des Europäischen Wirtschaftsraums oder EWR (d. h. der Mitgliedstaaten der Europäischen Union sowie Norwegens, Islands und Liechtensteins) übermitteln, wenn dies mit den Datenschutzgesetzen vereinbar ist und die Art der Übermittlung angemessene Garantien in Bezug auf Ihre Daten bietet, z. B:<br><br>
+&bull; im Wege einer Datenübertragungsvereinbarung, die die aktuellen Standardvertragsklauseln enthält, die von der Europäischen Kommission für die Übermittlung personenbezogener Daten durch für die Verarbeitung Verantwortliche im EWR an für die Verarbeitung Verantwortliche und Auftragsverarbeiter in Ländern ohne angemessene Datenschutzgesetze angenommen wurden; ein Beispiel für eine solche Vereinbarung finden Sie hier: <a href="https://ec.europa.eu/info/law/law-topic/data-protection/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/info/law/law-topic/data-protection/data-transfers-outside-eu/model-contracts-transfer-personal-data-third-countries_en</a>;<br>
+&bull; durch Unterzeichnung des EU-US-Datenschutzschilds für die Übermittlung personenbezogener Daten von Stellen in der EU an Stellen in den Vereinigten Staaten von Amerika oder eines gleichwertigen Abkommens in Bezug auf andere Gerichtsbarkeiten; oder<br>
+&bull; die Übermittlung Ihrer Daten in ein Land, in dem die Europäische Kommission die Angemessenheit des dortigen Datenschutzniveaus aufgrund seiner Rechtsvorschriften festgestellt hat; oder<br>
+&bull; wenn sie für den Abschluss oder die Erfüllung eines Vertrages zwischen uns und einem Dritten erforderlich ist und die Übermittlung in Ihrem Interesse für die Zwecke dieses Vertrages liegt (z. B. wenn wir Daten außerhalb des EWR übermitteln müssen, um unsere Verpflichtungen aus diesem Vertrag zu erfüllen, wenn Sie ein Kunde von uns sind); oder<br>
+&bull; wenn Sie in die Datenübermittlung eingewilligt haben.<br><br>
+<em>WER IST FÜR DIE VERARBEITUNG IHRER PERSÖNLICHEN DATEN AUF DER CLOUDSTAFF WEBSITE VERANTWORTLICH?</em><br>
+Die für die Verarbeitung der personenbezogenen Daten von Website-Nutzern, Bewerbern und Lieferanten zuständige Stelle bei CLOUDSTAFF hängt davon ab, wo Sie die Dienste von CLOUDSTAFF nutzen oder CLOUDSTAFF mit Dienstleistungen versorgen.<br><br>
+Das für die Verarbeitung der personenbezogenen Daten von Website-Nutzern, Bewerbern und Lieferanten in Deutschland zuständige Unternehmen ist CLOUDSTAFF.<br><br>
+Das für die Verarbeitung der personenbezogenen Daten von Website-Nutzern, Bewerbern und Lieferanten in Deutschland zuständige Unternehmen ist CLOUDSTAFF.<br><br>
+<em>COOKIES-RICHTLINIEN</em><br>
+<strong>Was ist ein Cookie?</strong><br>
+Ein Cookie ist eine kleine Datei, die um Erlaubnis bittet, auf der Festplatte Ihres Computers gespeichert zu werden. Sobald Sie zustimmen, wird die Datei hinzugefügt und das Cookie hilft bei der Analyse des Webverkehrs oder informiert Sie, wenn Sie eine bestimmte Website besuchen. Cookies ermöglichen es Webanwendungen, auf Sie als Individuum einzugehen. Die Webanwendung kann ihren Betrieb auf Ihre Bedürfnisse, Vorlieben und Abneigungen abstimmen, indem sie Informationen über Ihre Vorlieben sammelt und speichert.<br><br>
+<strong>Wie verwenden wir Cookies?</strong><br>
+Wir verwenden Traffic-Log-Cookies, um festzustellen, welche Seiten genutzt werden. Dies hilft uns, Daten über den Webseitenverkehr zu analysieren und unsere Website zu verbessern, um sie an die Bedürfnisse unserer Kunden anzupassen. Wir verwenden diese Informationen nur zu statistischen Analysezwecken und löschen die Daten anschließend aus dem System.<br><br>
+Insgesamt helfen uns Cookies dabei, Ihnen eine bessere Website zu bieten, indem sie uns ermöglichen zu beobachten, welche Seiten Sie nützlich finden und welche nicht. Ein Cookie verschafft uns in keiner Weise Zugang zu Ihrem Computer oder anderen Informationen über Sie als den Daten, die Sie uns mitteilen möchten.<br><br>
+Sie können wählen, ob Sie Cookies akzeptieren oder ablehnen. Die meisten Webbrowser akzeptieren Cookies automatisch, aber Sie können die Einstellungen Ihres Browsers in der Regel so ändern, dass Cookies abgelehnt werden, wenn Sie dies wünschen. Dies kann dazu führen, dass Sie die Vorteile der Website nicht in vollem Umfang nutzen können.<br><br>
+<strong>Welche Cookies verwenden wir?</strong><br>
+&bull; volcanic_saved_jobs_id - Dies wird verwendet, um einige Aufträge für Benutzer zu speichern, bevor sie sich auf der Website registrieren. Diese Aufträge können dann in das Benutzerkonto eingetragen werden, wenn sie sich registrieren.<br>
+&bull; volcanic_rumble_uid - Dieser Cookie-Name ist mit dem CMS-Plattform-Tracking von Volcanic verbunden. Er wird verwendet, um die einzelnen Aktionen jedes Nutzers auf der Website zu verfolgen und aufzuzeichnen. Standardmäßig hat er kein Verfallsdatum. Der Hauptzweck dieses Cookies ist: Leistung<br>
+&bull; _user_logged_in - Dieser Cookie-Name steht im Zusammenhang mit dem Tracking der CMS-Plattform von Volcanic. Er wird verwendet, um den Benutzer eingeloggt zu halten, wenn er die Website verlässt und zurückkehrt. Standardmäßig läuft es ab, nachdem die Sitzung des Benutzers beendet ist. Der Hauptzweck dieses Cookies ist: Leistung<br>
+&bull; _oliver_session - Dieser Cookie-Name ist mit dem Tracking der CMS-Plattform von Volcanic verbunden. Er wird verwendet, um die Sitzung des Benutzers auf der Website für Analytics zu verfolgen. Standardmäßig läuft es ab, nachdem die Sitzung des Benutzers beendet ist. Der Hauptzweck dieses Cookies ist: Leistung<br><br>
+<em>WIE KÖNNEN SIE UNS KONTAKTIEREN?</em><br>
+Sie können sich jederzeit mit uns in Verbindung setzen<br><br>
+&bull; um auf die personenbezogenen Daten, die Sie uns zur Verfügung gestellt haben, zuzugreifen, sie zu ändern oder zurückzunehmen;<br>
+&bull; wenn Sie den Verdacht haben, dass Ihre persönlichen Daten missbraucht werden, verloren gegangen sind oder Unbefugte darauf zugreifen;<br>
+&bull; um Ihre Einwilligung in die Verarbeitung Ihrer personenbezogenen Daten zu widerrufen (wenn die Einwilligung die Rechtsgrundlage für die Verarbeitung Ihrer personenbezogenen Daten ist);<br>
+&bull; Kommentare oder Vorschläge zu dieser Datenschutzrichtlinie mitzuteilen; und<br>
+&bull; jeden anderen Grund, den Sie in dieser Datenschutzrichtlinie finden.<br><br>
+Wir hoffen, dass dies nicht notwendig ist. Wenn Sie sich jedoch über die Verwendung Ihrer persönlichen Daten durch uns beschweren möchten, senden Sie bitte eine E-Mail mit Ihrer Beschwerde an unseren Datenschutzbeauftragten unter der unten angegebenen Adresse:<br><br>
+CloudStaff Consulting GmbH<br>
+Im Mediapark 5<br>
+50670 Köln<br>
+Deutschland<br><br>
+Alternativ können Sie auch eine E-Mail an folgende Adresse senden:<br><br>
+Rafael Pilis, Datenschutzbeauftragter<br>
+E-Mail: info@cloudstaffconsulting.com<br><br>
+Wir nehmen den Datenschutz ernst und werden uns so schnell wie möglich bei Ihnen melden.<br><br>
+Sie haben auch das Recht, eine Beschwerde bei der zuständigen Aufsichtsbehörde einzureichen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-cta">
+        <a href="#" class="floating-cta-button" id="open-contact-overlay">
+            <i class="fas fa-envelope"></i>
+            Kontakt aufnehmen
+        </a>
+    </div>
+
+    <div class="contact-overlay" id="contact-overlay">
+        <div class="floating-contact-box" id="contact-box">
+            <button class="close-overlay" id="close-contact-overlay" aria-label="Schließen">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contact-panel-content">
+                <h3>Sie haben eine Frage oder brauchen Hilfe? Wir helfen Ihnen gerne!</h3>
+                <div class="contact-info-row">
+                    <div class="contact-phone">
+                        <i class="fas fa-headset"></i>
+                        <a href="tel:+4915170517620">+49 1517 0517 620</a>
+                    </div>
+                    <div class="contact-form-link">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@cloudstaffconsulting.com">info@cloudstaffconsulting.com</a>
+                    </div>
+                    <div class="contact-hours">Mo-Fr: 09:00 - 17:00 Uhr</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    (function() {
+        var openOverlayBtn = document.getElementById('open-contact-overlay');
+        var overlay = document.getElementById('contact-overlay');
+        var closeOverlayBtn = document.getElementById('close-contact-overlay');
+        var contactBox = document.getElementById('contact-box');
+
+        if (openOverlayBtn && overlay && closeOverlayBtn && contactBox) {
+            openOverlayBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                overlay.style.display = 'flex';
+            });
+
+            closeOverlayBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('mousedown', function(e) {
+                if (!contactBox.contains(e.target)) {
+                    overlay.style.display = 'none';
+                }
+            });
+        }
+    })();
+    </script>
+
+    <script>
+        // Cookie settings functionality
+        document.getElementById('cookie-settings').addEventListener('click', function() {
+            alert('Cookie-Einstellungen werden angezeigt...');
+            // Here would be the implementation for cookie settings
+        });
+    </script>
+
+    <!-- Cookie-Handling für sessionId -->
+    <script>
+    (function() {
+        // Cookie-Funktionen
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // sessionId Cookie setzen, lesen oder löschen
+        function initSessionId() {
+            var sessionId = getCookie('sessionId');
+            
+            // Wenn keine sessionId existiert, erstelle eine neue
+            if (!sessionId) {
+                // Generiere eine eindeutige sessionId (z.B. Timestamp + Random)
+                sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                // Setze Cookie für die Dauer der Browser-Session (ohne expires wird es beim Schließen gelöscht)
+                setCookie('sessionId', sessionId);
+            }
+            
+            return sessionId;
+        }
+
+        // Beim Laden der Seite sessionId initialisieren
+        initSessionId();
+
+        // Globale Funktionen für externe Nutzung verfügbar machen
+        window.CookieHandler = {
+            set: setCookie,
+            get: getCookie,
+            delete: deleteCookie,
+            getSessionId: function() {
+                return getCookie('sessionId');
+            },
+            deleteSessionId: function() {
+                deleteCookie('sessionId');
+            }
+        };
+    })();
+    </script>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Einige Cookies sind notwendig für den Betrieb der Website, während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Ablehnen</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookie-settings-btn">Einstellungen</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-settings-modal" id="cookie-settings-modal">
+        <div class="cookie-settings-content">
+            <h2>Cookie-Einstellungen</h2>
+            <p>Sie können hier auswählen, welche Cookies Sie zulassen möchten. Notwendige Cookies können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.</p>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Notwendige Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden. Sie werden normalerweise nur als Reaktion auf Ihre Aktionen gesetzt, die einer Anfrage nach Diensten entsprechen, wie z.B. das Setzen Ihrer Datenschutzeinstellungen oder das Ausfüllen von Formularen.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Funktionale Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-functional">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies ermöglichen es der Website, erweiterte Funktionalität und Personalisierung bereitzustellen. Sie können von uns oder von Drittanbietern gesetzt werden, deren Dienste wir auf unseren Seiten verwenden.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Analytische Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und melden. Dies hilft uns, unsere Website zu verbessern.
+                </div>
+            </div>
+
+            <div class="cookie-settings-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-save-settings">Einstellungen speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Banner JavaScript -->
+    <script>
+        // Cookie-Funktionen global verfügbar machen
+        function getCookie(name) {
+            if (window.CookieHandler && window.CookieHandler.get) {
+                return window.CookieHandler.get(name);
+            }
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            if (window.CookieHandler && window.CookieHandler.set) {
+                return window.CookieHandler.set(name, value, days);
+            }
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function deleteCookie(name) {
+            if (window.CookieHandler && window.CookieHandler.delete) {
+                return window.CookieHandler.delete(name);
+            }
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function initSessionId() {
+            if (window.CookieHandler && window.CookieHandler.getSessionId) {
+                var sessionId = window.CookieHandler.getSessionId();
+                if (!sessionId) {
+                    sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    setCookie('sessionId', sessionId);
+                }
+                return sessionId;
+            }
+            return null;
+        }
+
+        // Cookie-Banner anzeigen, wenn noch keine Entscheidung getroffen wurde
+        function showCookieBanner() {
+            var consent = getCookie('cookieConsent');
+            if (!consent) {
+                var banner = document.getElementById('cookie-banner');
+                if (banner) {
+                    banner.classList.add('show');
+                }
+            } else {
+                // Wenn bereits eine Entscheidung getroffen wurde, sessionId initialisieren
+                initSessionId();
+            }
+        }
+
+        // Cookie-Einstellungen speichern
+        function saveCookieSettings(functional, analytics) {
+            var settings = {
+                functional: functional,
+                analytics: analytics
+            };
+            setCookie('cookieConsent', 'custom', 365);
+            setCookie('cookieSettings', JSON.stringify(settings), 365);
+            
+            // sessionId setzen, wenn funktionale Cookies erlaubt sind
+            if (functional) {
+                initSessionId();
+            } else {
+                deleteCookie('sessionId');
+            }
+            
+            // Cookie-Banner ausblenden
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // Settings Modal ausblenden
+            var modal = document.getElementById('cookie-settings-modal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Alle Cookies akzeptieren
+        function acceptAllCookies() {
+            setCookie('cookieConsent', 'accepted', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: true, analytics: true}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            initSessionId();
+        }
+
+        // Alle Cookies ablehnen
+        function rejectAllCookies() {
+            setCookie('cookieConsent', 'rejected', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: false, analytics: false}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // sessionId löschen
+            deleteCookie('sessionId');
+        }
+
+        // Event Listener für Cookie-Buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            var acceptBtn = document.getElementById('cookie-accept');
+            var rejectBtn = document.getElementById('cookie-reject');
+            var settingsBtn = document.getElementById('cookie-settings-btn');
+            var saveSettingsBtn = document.getElementById('cookie-save-settings');
+            var settingsModal = document.getElementById('cookie-settings-modal');
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', acceptAllCookies);
+            }
+
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', rejectAllCookies);
+            }
+
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', function() {
+                    if (settingsModal) {
+                        settingsModal.classList.add('show');
+                    }
+                });
+            }
+
+            if (saveSettingsBtn) {
+                saveSettingsBtn.addEventListener('click', function() {
+                    var functional = document.getElementById('cookie-functional').checked;
+                    var analytics = document.getElementById('cookie-analytics').checked;
+                    saveCookieSettings(functional, analytics);
+                });
+            }
+
+            // Modal schließen beim Klick außerhalb
+            if (settingsModal) {
+                settingsModal.addEventListener('click', function(e) {
+                    if (e.target === settingsModal) {
+                        settingsModal.classList.remove('show');
+                    }
+                });
+            }
+
+            // Cookie-Banner anzeigen
+            showCookieBanner();
+        });
+    </script>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">CSC</div>
+                    <div class="logo-divider"></div>
+                    <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+                    <p>
+                        CloudStaff Consulting GmbH ist Ihr vertrauensvoller Partner für SAP-Personalberatung in DACH.
+                    </p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Im Mediapark 5, Köln, 50670, Deutschland</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+4915170517620" style="color: var(--white); text-decoration: none;">+49 (0) 1517 0517620</a></p>
+                    <p><i class="fas fa-envelope"></i> info@cloudstaffconsulting.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/cloudstaffconsulting" target="_blank" rel="noopener noreferrer" aria-label="CloudStaff Consulting auf LinkedIn (öffnet in neuem Tab)"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 CloudStaff Consulting GmbH. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

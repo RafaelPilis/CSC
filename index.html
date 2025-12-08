@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudStaff Consulting GmbH</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap">
+    <style>
+        /* Modern Professional Theme with Blue-Gray Accents */
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #e2e8f0;
+            --accent: #4a5568;
+            --black: #1a1a1a;
+            --white: #ffffff;
+            --light-gray: #f7f7f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: var(--black);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            margin-right: auto;
+            padding-right: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--black);
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .logo-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary);
+            margin: 5px 0 3px;
+        }
+        
+        .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content a {
+            color: var(--black);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 500px;
+            background-image: url('https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2c4e80;
+        }
+        
+        /* Target Audience Section */
+        .target-audience-section {
+            padding: 80px 0;
+            background-color: #f0f3f7;
+        }
+        
+        .target-audience-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .target-audience-column {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .target-audience-column h2 {
+            font-size: 28px;
+            color: #000000;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 15px;
+        }
+        
+        .target-audience-column p {
+            color: var(--accent);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .audience-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: auto;
+            margin-right: auto;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 10px 22px -16px rgba(15, 23, 42, 0.45);
+        }
+
+        .audience-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 26px -18px rgba(15, 23, 42, 0.55);
+            background-color: #111827;
+        }
+        
+        .target-audience-column:nth-child(1) p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+        
+        .target-audience-column:nth-child(2) p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .services-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .services-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+        
+        .services-header p {
+            color: var(--accent);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .service-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000000;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--secondary);
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-title i {
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        
+        .service-list {
+            list-style: none;
+        }
+        
+        .service-item {
+            margin-bottom: 30px;
+            background-color: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            color: #000000;
+        }
+        
+        .service-item h3 i {
+            margin-right: 15px;
+            color: #000000;
+        }
+        
+        .service-item p {
+            color: var(--accent);
+        }
+        
+        .service-item a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .service-item a:hover {
+            color: var(--accent);
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 100px 0;
+            background-color: var(--primary);
+            background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: var(--white);
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30, 58, 95, 0.9);
+        }
+
+        .features-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .features-header {
+            margin-bottom: 60px;
+        }
+
+        .features-header h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .features-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon i {
+            font-size: 36px;
+            color: var(--white);
+        }
+
+        .feature-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .feature-description {
+            color: var(--white);
+            opacity: 0.8;
+            font-size: 15px;
+            line-height: 1.8;
+            text-align: justify;
+            text-align-last: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .testimonials-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        
+        .testimonials-header p {
+            color: var(--accent);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .testimonial {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+            justify-content: space-between;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--secondary);
+            font-family: Georgia, serif;
+            opacity: 0.6;
+        }
+        
+        .testimonial-content {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            font-style: italic;
+            color: #666666;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-author .icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #1e3a5f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+        
+        .testimonial-author .icon i {
+            font-size: 20px;
+        }
+        
+        .testimonial-author div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .testimonial-author .name {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--black);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        
+        .testimonial-author .position {
+            font-size: 14px;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .footer-logo .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .footer-logo .logo-divider {
+            width: 35%;
+            height: 1px;
+            background-color: var(--secondary);
+            margin: 5px 0 3px;
+        }
+        
+        .footer-logo .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 250px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .footer-social {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-left: 10px;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .footer-legal {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .footer-legal-links a {
+            margin: 0 15px;
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-legal-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                padding-right: 0;
+                align-items: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 15px;
+                margin-bottom: 10px;
+            }
+            
+            .services-grid, .testimonials-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .testimonial {
+                max-width: 100%;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-info {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .feature-item {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .floating-contact-box {
+                right: 3vw;
+                bottom: 18vw;
+                max-width: 96vw;
+                width: 96vw;
+            }
+        }
+
+        /* Floating CTA Button */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta-button {
+            background: linear-gradient(135deg, #233e68 0%, #1a2d4d 100%);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 6px 18px rgba(23, 37, 84, 0.35);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        .floating-cta-button i {
+            font-size: 20px;
+        }
+
+        .floating-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(23, 37, 84, 0.4);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .floating-cta-button {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Overlay für Kontaktbox */
+        .contact-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.25);
+            z-index: 2000;
+            display: none;
+            padding: 20px;
+        }
+        .floating-contact-box {
+            position: fixed;
+            right: 30px;
+            bottom: 90px;
+            z-index: 2100;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 45px -18px rgba(15, 23, 42, 0.35);
+            padding: 18px 20px 18px 20px;
+            max-width: 340px;
+            width: 92vw;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            animation: fadeInPanel 0.2s;
+        }
+
+        .contact-panel-content h3 {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+        }
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #1e3a5f;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-overlay:hover {
+            color: #c00;
+        }
+        @keyframes fadeInPanel {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Modal für Kontaktformular */
+        .form-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 58, 95, 0.35);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-modal {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(30,58,95,0.18);
+            padding: 32px 32px 24px 32px;
+            max-width: 540px;
+            width: 96vw;
+            position: relative;
+            animation: fadeInPanel 0.2s;
+        }
+        .form-modal h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .form-modal-desc {
+            font-size: 1.02rem;
+            text-align: center;
+            margin-bottom: 18px;
+            color: #222;
+        }
+        .strategy-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+        }
+        .form-row input,
+        .form-row textarea {
+            flex: 1;
+            padding: 8px 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #f8fafc;
+            transition: border 0.2s;
+        }
+        .form-row input:focus,
+        .form-row textarea:focus {
+            border: 1.5px solid #1e3a5f;
+            outline: none;
+        }
+        .form-row textarea {
+            resize: vertical;
+            min-height: 38px;
+        }
+        .form-row-checkbox {
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.97rem;
+        }
+        .form-row-checkbox label {
+            flex: 1;
+            color: #444;
+        }
+        .form-row-checkbox input[type="checkbox"] {
+            margin-top: 3px;
+        }
+        .form-row-checkbox a {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+        .form-submit-btn {
+            width: 100%;
+            background: #1e3a5f;
+            color: #fff;
+            border: none;
+            border-radius: 7px;
+            padding: 10px 0;
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-top: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .form-submit-btn:hover {
+            background: #274a7a;
+        }
+        .close-form-modal {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #c00;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .close-form-modal span {
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+        @media (max-width: 600px) {
+            .form-modal {
+                padding: 12vw 2vw 6vw 2vw;
+                max-width: 99vw;
+            }
+            .form-modal h2 {
+                font-size: 1.05rem;
+            }
+            .form-modal-desc {
+                font-size: 0.97rem;
+            }
+        }
+
+        .floating-contact-box .contact-phone,
+        .floating-contact-box .contact-form-link,
+        .floating-contact-box .contact-hours {
+            font-size: 1rem;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .floating-contact-box .contact-phone i,
+        .floating-contact-box .contact-form-link i {
+            color: #1e3a5f;
+            font-size: 16px;
+        }
+
+        .floating-contact-box .contact-phone a,
+        .floating-contact-box .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .floating-contact-box .contact-phone a:hover,
+        .floating-contact-box .contact-form-link a:hover {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+
+        .floating-contact-box .contact-hours {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Contact Overlay Links */
+        .contact-overlay .contact-info-row .contact-phone a,
+        .contact-overlay .contact-info-row .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .contact-overlay .contact-info-row .contact-phone a:hover,
+        .contact-overlay .contact-info-row .contact-form-link a:hover {
+            color: #1e3a5f;
+            background-color: #e2e8f0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            padding: 24px 20px;
+            z-index: 10000;
+            display: none;
+            border-top: 3px solid var(--primary);
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cookie-banner-text {
+            flex: 1;
+            min-width: 300px;
+            color: var(--black);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-banner-text a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+        }
+
+        .cookie-btn-accept {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: #2c4e80;
+        }
+
+        .cookie-btn-reject {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .cookie-btn-reject:hover {
+            background-color: var(--secondary);
+        }
+
+        .cookie-btn-settings {
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .cookie-btn-settings:hover {
+            background-color: #f7f7f7;
+        }
+
+        /* Cookie Settings Modal */
+        .cookie-settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cookie-settings-modal.show {
+            display: flex;
+        }
+
+        .cookie-settings-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookie-settings-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .cookie-settings-content p {
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-category {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        .cookie-category:last-child {
+            border-bottom: none;
+        }
+
+        .cookie-category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .cookie-category-header h3 {
+            color: var(--black);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .cookie-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .cookie-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider {
+            background-color: var(--primary);
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        .cookie-category-description {
+            font-size: 13px;
+            color: var(--accent);
+            line-height: 1.5;
+        }
+
+        .cookie-settings-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cookie-banner-buttons {
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .cookie-settings-content {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-text">CSC</div>
+                <div class="logo-divider"></div>
+                <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="fuer-unternehmen.html">Unternehmen</a></li>
+                    <li><a href="fuer-kandidaten.html">Freelancer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Floating CTA Button -->
+    <div class="floating-cta">
+        <a href="#" class="floating-cta-button open-contact-overlay">
+            <i class="fas fa-envelope"></i>
+            Kontakt aufnehmen
+        </a>
+    </div>
+
+    <!-- Kontakt Overlay -->
+    <div class="contact-overlay" id="contact-overlay">
+        <div class="floating-contact-box" id="contact-box">
+            <button class="close-overlay" id="close-contact-overlay" aria-label="Schließen">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contact-panel-content">
+                <h3>Sie haben eine Frage oder brauchen Hilfe? Wir helfen Ihnen gerne!</h3>
+                <div class="contact-info-row">
+                    <div class="contact-phone">
+                        <i class="fas fa-headset"></i>
+                        <a href="tel:+4915170517620">+49 1517 0517 620</a>
+                    </div>
+                    <div class="contact-form-link">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@cloudstaffconsulting.com">info@cloudstaffconsulting.com</a>
+                    </div>
+                    <div class="contact-hours">Mo-Fr: 09:00 - 17:00 Uhr</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal für Kontaktformular -->
+    <div id="form-modal-overlay" class="hinweis-modal-bg" style="display:none;">
+      <div class="hinweis-box" id="form-modal">
+        <button id="close-form-modal" class="hinweis-close-btn" aria-label="Schließen">&times;</button>
+        <h2 style="color:#1a1a1a; font-size:1.05rem; font-family:'IBM Plex Sans',sans-serif; font-weight:700; margin-bottom:10px; line-height:1.13; text-align:center;">Kontaktformular</h2>
+        <p style="color:#222; font-size:0.97rem; font-weight:400; margin-bottom:10px; text-align:justify; text-justify:inter-word; hyphens:auto;">Nehmen Sie Kontakt mit uns auf. Wir melden uns schnellstmöglich bei Ihnen zurück.</p>
+        <form id="contact-form" style="color:#222; margin-top:2px;">
+          <div style="display:flex; gap:7px; margin-bottom:7px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-vorname" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Vorname</label>
+              <input type="text" id="c-vorname" name="Vorname" required style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-nachname" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Nachname</label>
+              <input type="text" id="c-nachname" name="Nachname" required style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+          </div>
+          <div style="display:flex; gap:7px; margin-bottom:7px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-email" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">E-Mail-Adresse</label>
+              <input type="email" id="c-email" name="E-Mail" required style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-telefon" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Telefonnummer <span style="font-weight:400; font-size:0.93em; opacity:0.7; color:#222;">Optional</span></label>
+              <input type="tel" id="c-telefon" name="Telefon" style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+          </div>
+          <div style="display:flex; gap:7px; margin-bottom:7px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-unternehmen" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Unternehmen <span style="font-weight:400; font-size:0.93em; opacity:0.7; color:#222;">Optional</span></label>
+              <input type="text" id="c-unternehmen" name="Unternehmen" style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-linkedin" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">LinkedIn-Profil <span style="font-weight:400; font-size:0.93em; opacity:0.7; color:#222;">Optional</span></label>
+              <input type="text" id="c-linkedin" name="LinkedIn" style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+          </div>
+          <div style="display:flex; gap:7px; margin-bottom:7px;">
+            <div style="flex:1; display:flex; flex-direction:column;">
+              <label for="c-region" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Region <span style="font-weight:400; font-size:0.93em; opacity:0.7; color:#222;">Optional</span></label>
+              <input type="text" id="c-region" name="Region" style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;">
+            </div>
+          </div>
+          <div style="margin-bottom:7px; display:flex; flex-direction:column;">
+            <label for="c-nachricht" style="font-weight:500; color:#222; font-size:0.93rem; margin-bottom:2px;">Nachricht <span style="font-weight:400; font-size:0.93em; opacity:0.7; color:#222;">Optional</span></label>
+            <textarea id="c-nachricht" name="Nachricht" rows="2" style="width:100%; border:1.2px solid #e2e8f0; border-radius:7px; padding:5px 8px; color:#222; font-size:0.93rem; background:#fafbfc; transition:border 0.2s;"></textarea>
+          </div>
+          <div style="margin-bottom:8px; display:flex; align-items:flex-start; color:#222;">
+            <input type="checkbox" id="c-datenschutz" name="Datenschutz" required style="margin-right:7px; margin-top:2px; accent-color:#d32f2f;">
+            <label for="c-datenschutz" style="font-size:0.92em; color:#222; line-height:1.4;">Mit dem Absenden dieses Formulars erklären Sie sich damit einverstanden, dass wir Ihre Daten gemäß DSGVO zum Zweck der Arbeitsvermittlung speichern. Sie können Ihr Einverständnis jederzeit widerrufen. Wir werden die von Ihnen bereitgestellten personenbezogenen Daten nur in Übereinstimmung mit unseren <a href="datenschutz.html" target="_blank" style="color:#222; text-decoration:underline;">Datenschutzbestimmungen</a> verwenden.</label>
+          </div>
+          <div style="display:flex; justify-content:center;">
+            <button type="submit" style="background:#1e3a5f; color:#fff; font-weight:700; font-size:0.97rem; border:none; border-radius:8px; padding:8px 0; width:88%; max-width:220px; margin-top:2px; cursor:pointer; transition:background 0.2s;">Absenden</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Ihr Partner für SAP-Personalberatung</h1>
+            <p>Wir bringen SAP-Freelancer mit marktführenden Unternehmen zusammen, die anspruchsvolle SAP-Projekte realisieren.</p>
+            <a href="#" class="btn-primary open-contact-overlay">Kontaktieren Sie uns</a>
+        </div>
+    </section>
+
+    <section class="target-audience-section">
+        <div class="container">
+            <div class="target-audience-container">
+                <div class="target-audience-column">
+                    <h2>Für Unternehmen</h2>
+                    <p>CloudStaff ist Ihr spezialisierter Partner für die Personalvermittlung von SAP-Freelancern. Wir verstehen die komplexen Anforderungen und Dynamiken der SAP-Projektwelt und liefern Ihnen hochqualifizierte Experten, die Ihre Projekte schnell und flexibel unterstützen – sei es in S/4HANA, SAP FI/CO, MM, SD, EWM, TM, GTS, HCM, Berechtigungen oder weiteren Modulen.</p>
+                    <p>Unsere erfahrenen Consultants prüfen sorgfältig nicht nur die fachlichen Skills, sondern auch die Projekt- und Branchenkenntnisse der Kandidaten. So stellen wir sicher, dass Sie Freelancer bekommen, die von Tag eins produktiv sind und Ihre Time-to-Market verkürzen.</p>
+                    <p>Dank unseres agilen Matching-Prozesses und transparenter Kommunikation bleiben Sie jederzeit informiert und können Personalengpässe effizient überbrücken.</p>
+                    <a href="fuer-unternehmen.html#projekt-teilen" class="audience-cta">Freelancer finden</a>
+                </div>
+                <div class="target-audience-column">
+                    <h2>Für Freelancer</h2>
+                    <p>Als spezialisierte Vermittlungsagentur für SAP-Freelancer wissen wir: Zeit, Vertrauen und Klarheit sind entscheidend. CSC vermittelt genau das, was fachlich, organisatorisch und menschlich zu Ihnen passt.</p>
+                    <p>Wir arbeiten direkt mit Entscheidern auf Kundenseite, kennen die Abläufe und sprechen Herausforderungen offen an – vor, während und nach der Vermittlung. Sie erhalten präzise Informationen, eine transparente Kommunikation über den gesamten Prozess hinweg und eine faire Beratung zu Laufzeiten, Tagessätzen und Erwartungen.</p>
+                    <p>Unser Ziel ist kein schneller Abschluss, sondern eine professionelle und verlässliche Zusammenarbeit – auf Augenhöhe. Für Sie bedeutet das: Klare Prozesse. Schnelles Feedback. Verlässliche Projekte.</p>
+                    <a href="fuer-kandidaten.html#registrieren" class="audience-cta">Projekt finden</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2>Unsere Dienstleistungen</h2>
+                <p>Spezialisierte Lösungen für Unternehmen und SAP-Experten</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-column">
+                    <h3 class="service-title"><i class="fas fa-building"></i> Unsere Services für Unternehmen</h3>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <h3><i class="fas fa-search"></i> Personalvermittlung</h3>
+                            <p>Wir finden die passenden SAP-Experten für Ihre offenen Projektrollen und unterstützen Sie im gesamten Auswahlprozess.</p>
+                        </li>
+                        <li class="service-item">
+                            <h3><i class="fas fa-users"></i> SAP-Projektbesetzung</h3>
+                            <p>Kurzfristige oder langfristige Unterstützung durch erfahrene SAP-Berater und Entwickler für Ihr Projekt.</p>
+                        </li>
+                        <li class="service-item">
+                            <h3><i class="fas fa-headset"></i> CloudStaff SAP Service Desk</h3>
+                            <p>Professionelle Unterstützung bei SAP-Implementierungen, -Upgrades und -Wartung durch erfahrene SAP-Spezialisten.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service-column">
+                    <h3 class="service-title"><i class="fas fa-user-tie"></i> Unsere Services für SAP-Freelancer</h3>
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <h3><i class="fas fa-file-contract"></i> Projektvermittlung</h3>
+                            <p>Wir verbinden SAP-Freelancer mit passenden Projekten – abgestimmt auf Skills, Erfahrung und Ziele.</p>
+                        </li>
+                        <li class="service-item">
+                            <h3><i class="fas fa-briefcase"></i> Freelancer-Beratung</h3>
+                            <p>Transparente Beratung zu Marktsituation, Tagessätzen, Projektanforderungen und Positionierung.</p>
+                        </li>
+                        <li class="service-item">
+                            <h3><i class="fas fa-laptop-code"></i> Projektvorbereitung &amp; Marktinsights</h3>
+                            <p>Unterstützung bei Interviews, Vertragsklarheit und exklusiven Einblicken in den SAP-Freelancermarkt.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container features-container">
+            <div class="features-header">
+                <h2>WAS UNS AUSZEICHNET</h2>
+                <p>Unsere Grundprinzipien bei der Vermittlung von SAP-Freelancern</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item" lang="de">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="feature-title">EXPERTISE</h3>
+                    <p class="feature-description">Mit über 100 erfolgreich vermittelten SAP-Experten haben wir Unternehmen partnerschaftlich begleitet und konnten mehr als 85 % der Einsätze termingerecht besetzen – dank tiefem Marktverständnis und präzisem Matching.</p>
+                </div>
+                <div class="feature-item" lang="de">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">EFFIZIENZ</h3>
+                    <p class="feature-description">Dank unserer klar definierten Prozesse präsentieren wir passende Freelancer innerhalb von 48 Stunden – schnell, verlässlich und genau<br>auf Ihre Projektanforderungen abge-<br>stimmt.</p>
+                </div>
+                <div class="feature-item" lang="de">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="feature-title">ENGAGEMENT</h3>
+                    <p class="feature-description">Persönlicher Einsatz und langfristiges Commitment für nachhaltige Beziehungen zwischen Kandidaten und Unternehmen mit kontinuierlicher Betreuung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2>Referenzen</h2>
+                <p>Was unsere Kunden und SAP-Freelancer über uns sagen</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p class="testimonial-content">"Die Zusammenarbeit mit CloudStaff Consulting hat uns einen hervorragenden SAP TM Berater mit S/4HANA Kenntnissen gebracht, der perfekt in unser Team passt.<br>Der gesamte Prozess war unkompliziert und professionell."</p>
+                    <div class="testimonial-author">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div>
+                            <div class="name">Marc N.</div>
+                            <div class="position">SAP-Projektleiter, Automotive</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-content">"Durch CloudStaff habe ich meine aktuelle Position als SAP EWM Berater gefunden.<br>Die persönliche Betreuung und der maßgeschneiderte Ansatz haben wirklich den Unterschied gemacht."</p>
+                    <div class="testimonial-author">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div>
+                            <div class="name">Sarah M.</div>
+                            <div class="position">SAP EWM Beraterin</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-content">"Als wir dringend SAP-Expertise für unser Projekt benötigten, konnte CloudStaff innerhalb kürzester Zeit qualifizierte SAP-Freelancer präsentieren. Ein zuverlässiger Partner, auf den man sich verlassen kann."</p>
+                    <div class="testimonial-author">
+                        <div class="icon"><i class="fas fa-user"></i></div>
+                        <div>
+                            <div class="name">Thomas W.</div>
+                            <div class="position">Projektleiter, Logistikunternehmen</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">CSC</div>
+                    <div class="logo-divider"></div>
+                    <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+                    <p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+                        CloudStaff Consulting GmbH ist Ihr vertrauensvoller Partner für SAP-Personalvermittlung und -Beratung in DACH.
+                    </p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Im Mediapark 5, Köln, 50670, Deutschland</p>
+                    <p><i class="fas fa-phone"></i> +49 (0) 1517 0517620</p>
+                    <p><i class="fas fa-envelope"></i> info@cloudstaffconsulting.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/cloudstaffconsulting" target="_blank" rel="noopener noreferrer" aria-label="CloudStaff Consulting auf LinkedIn (öffnet in neuem Tab)"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 CloudStaff Consulting GmbH. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Kontakt Overlay Panel
+        var overlay = document.getElementById('contact-overlay');
+        var closeOverlayBtn = document.getElementById('close-contact-overlay');
+        var contactBox = document.getElementById('contact-box');
+
+        function openContactOverlay(e) {
+            e.preventDefault();
+            if (overlay) {
+                overlay.style.display = 'flex';
+            }
+        }
+
+        if (overlay && closeOverlayBtn && contactBox) {
+            // Event-Listener für alle Buttons mit der Klasse 'open-contact-overlay'
+            var openOverlayButtons = document.querySelectorAll('.open-contact-overlay');
+            openOverlayButtons.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    openContactOverlay(e);
+                });
+            });
+
+            // Event-Listener für Hero-Button (falls vorhanden)
+            var heroContactButton = document.getElementById('hero-contact-button');
+            if (heroContactButton) {
+                heroContactButton.addEventListener('click', function(e) {
+                    openContactOverlay(e);
+                });
+            }
+
+            closeOverlayBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('mousedown', function(e) {
+                if (!contactBox.contains(e.target)) {
+                    overlay.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal für Kontaktformular
+        var openFormModal = document.getElementById('open-form-modal');
+        var formModalOverlay = document.getElementById('form-modal-overlay');
+        var closeFormModal = document.getElementById('close-form-modal');
+        var formModal = document.getElementById('form-modal');
+
+        if (openFormModal && formModalOverlay && closeFormModal && formModal) {
+            openFormModal.addEventListener('click', function(e) {
+                e.preventDefault();
+                formModalOverlay.style.display = 'flex';
+            });
+            closeFormModal.addEventListener('click', function() {
+                formModalOverlay.style.display = 'none';
+            });
+            formModalOverlay.addEventListener('mousedown', function(e) {
+                if (!formModal.contains(e.target)) {
+                    formModalOverlay.style.display = 'none';
+                }
+            });
+        }
+    });
+    </script>
+    
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Einige Cookies sind notwendig für den Betrieb der Website, während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Ablehnen</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookie-settings-btn">Einstellungen</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-settings-modal" id="cookie-settings-modal">
+        <div class="cookie-settings-content">
+            <h2>Cookie-Einstellungen</h2>
+            <p>Sie können hier auswählen, welche Cookies Sie zulassen möchten. Notwendige Cookies können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.</p>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Notwendige Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden. Sie werden normalerweise nur als Reaktion auf Ihre Aktionen gesetzt, die einer Anfrage nach Diensten entsprechen, wie z.B. das Setzen Ihrer Datenschutzeinstellungen oder das Ausfüllen von Formularen.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Funktionale Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-functional">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies ermöglichen es der Website, erweiterte Funktionalität und Personalisierung bereitzustellen. Sie können von uns oder von Drittanbietern gesetzt werden, deren Dienste wir auf unseren Seiten verwenden.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Analytische Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und melden. Dies hilft uns, unsere Website zu verbessern.
+                </div>
+            </div>
+
+            <div class="cookie-settings-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-save-settings">Einstellungen speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie-Handling für sessionId -->
+    <script>
+    (function() {
+        // Cookie-Funktionen
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // Cookie-Einstellungen prüfen
+        function hasCookieConsent() {
+            var consent = getCookie('cookieConsent');
+            return consent === 'accepted' || consent === 'custom';
+        }
+
+        // sessionId Cookie setzen, lesen oder löschen
+        function initSessionId() {
+            // Nur setzen, wenn der Benutzer zugestimmt hat
+            if (hasCookieConsent()) {
+                var sessionId = getCookie('sessionId');
+                
+                // Wenn keine sessionId existiert, erstelle eine neue
+                if (!sessionId) {
+                    // Generiere eine eindeutige sessionId (z.B. Timestamp + Random)
+                    sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    // Setze Cookie für die Dauer der Browser-Session (ohne expires wird es beim Schließen gelöscht)
+                    setCookie('sessionId', sessionId);
+                }
+                
+                return sessionId;
+            }
+            return null;
+        }
+
+        // Cookie-Banner anzeigen, wenn noch keine Entscheidung getroffen wurde
+        function showCookieBanner() {
+            var consent = getCookie('cookieConsent');
+            if (!consent) {
+                var banner = document.getElementById('cookie-banner');
+                if (banner) {
+                    banner.classList.add('show');
+                }
+            } else {
+                // Wenn bereits eine Entscheidung getroffen wurde, sessionId initialisieren
+                initSessionId();
+            }
+        }
+
+        // Cookie-Einstellungen speichern
+        function saveCookieSettings(functional, analytics) {
+            var settings = {
+                functional: functional,
+                analytics: analytics
+            };
+            setCookie('cookieConsent', 'custom', 365);
+            setCookie('cookieSettings', JSON.stringify(settings), 365);
+            
+            // sessionId setzen, wenn funktionale Cookies erlaubt sind
+            if (functional) {
+                initSessionId();
+            } else {
+                deleteCookie('sessionId');
+            }
+            
+            // Cookie-Banner ausblenden
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // Settings Modal ausblenden
+            var modal = document.getElementById('cookie-settings-modal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Alle Cookies akzeptieren
+        function acceptAllCookies() {
+            setCookie('cookieConsent', 'accepted', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: true, analytics: true}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            initSessionId();
+        }
+
+        // Alle Cookies ablehnen
+        function rejectAllCookies() {
+            setCookie('cookieConsent', 'rejected', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: false, analytics: false}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // sessionId löschen
+            deleteCookie('sessionId');
+        }
+
+        // Event Listener für Cookie-Buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            var acceptBtn = document.getElementById('cookie-accept');
+            var rejectBtn = document.getElementById('cookie-reject');
+            var settingsBtn = document.getElementById('cookie-settings-btn');
+            var saveSettingsBtn = document.getElementById('cookie-save-settings');
+            var settingsModal = document.getElementById('cookie-settings-modal');
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', acceptAllCookies);
+            }
+
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', rejectAllCookies);
+            }
+
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', function() {
+                    if (settingsModal) {
+                        settingsModal.classList.add('show');
+                    }
+                });
+            }
+
+            if (saveSettingsBtn) {
+                saveSettingsBtn.addEventListener('click', function() {
+                    var functional = document.getElementById('cookie-functional').checked;
+                    var analytics = document.getElementById('cookie-analytics').checked;
+                    saveCookieSettings(functional, analytics);
+                });
+            }
+
+            // Modal schließen beim Klick außerhalb
+            if (settingsModal) {
+                settingsModal.addEventListener('click', function(e) {
+                    if (e.target === settingsModal) {
+                        settingsModal.classList.remove('show');
+                    }
+                });
+            }
+
+            // Cookie-Banner anzeigen
+            showCookieBanner();
+        });
+
+        // Globale Funktionen für externe Nutzung verfügbar machen
+        window.CookieHandler = {
+            set: setCookie,
+            get: getCookie,
+            delete: deleteCookie,
+            getSessionId: function() {
+                return getCookie('sessionId');
+            },
+            deleteSessionId: function() {
+                deleteCookie('sessionId');
+            },
+            hasConsent: hasCookieConsent
+        };
+    })();
+    </script>
+</body>
+</html> 

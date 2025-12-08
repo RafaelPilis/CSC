@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Rafael Pilis SAP Recruiting</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Rafael Pilis</h1>
+                <p>SAP Recruiting Spezialist</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ueber-uns.html">Über Uns</a></li>
+                    <li class="dropdown">
+                        <a href="services.html">Services</a>
+                        <div class="dropdown-content">
+                            <a href="fuer-unternehmen.html">Für Unternehmen</a>
+                            <a href="fuer-kandidaten.html">Für Kandidaten</a>
+                        </div>
+                    </li>
+                    <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Nehmen Sie Kontakt mit uns auf für Ihre SAP-Recruiting Anforderungen</p>
+        </div>
+    </section>
+
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Kontaktinformationen</h3>
+                    <p>Wir freuen uns auf Ihre Nachricht. Füllen Sie das Formular aus oder kontaktieren Sie uns direkt über die folgenden Kanäle:</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Musterstraße 123<br>10115 Berlin<br>Deutschland</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telefon</h4>
+                                <p>+49 123 456789</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>E-Mail</h4>
+                                <p>info@rafael-pilis.de</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Geschäftszeiten</h4>
+                                <p>Montag - Freitag: 9:00 - 18:00 Uhr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h4>Folgen Sie uns</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-xing"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Kontaktformular</h3>
+                    <form id="contactForm" action="#" method="post" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Unternehmen</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="subject">Betreff *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="inquiryType">Art der Anfrage *</label>
+                            <select id="inquiryType" name="inquiryType" required>
+                                <option value="">Bitte wählen</option>
+                                <option value="job_seeker">Ich suche eine neue Position</option>
+                                <option value="company">Ich suche SAP-Experten für mein Unternehmen</option>
+                                <option value="general">Allgemeine Anfrage</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage gespeichert und verwendet werden. *</label>
+                        </div>
+                        <div class="form-group full-width">
+                            <input type="submit" value="Nachricht senden" class="btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h3>Besuchen Sie uns</h3>
+            <div class="map-container">
+                <!-- Hier kann eine echte Google Maps oder OpenStreetMap Integration eingebunden werden -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.6890550427786!2d13.383370915802487!3d52.531026779814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851e629b8fe11%3A0x87c139382e8d2b23!2sBerlin%20Mitte!5e0!3m2!1sde!2sde!4v1625145412354!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h3>Häufig gestellte Fragen</h3>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Wie läuft der Vermittlungsprozess ab?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nach dem ersten Kontakt führen wir ein ausführliches Gespräch, um Ihre Anforderungen zu verstehen. Anschließend beginnt die Suche nach passenden Kandidaten oder Positionen. Wir stellen Ihnen nur vorgeprüfte Profile vor und begleiten Sie durch den gesamten Prozess bis zum erfolgreichen Abschluss.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Was kostet Ihre Dienstleistung für Kandidaten?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Für Kandidaten ist unsere Dienstleistung kostenlos. Unsere Honorare werden von den Unternehmen getragen, die auf der Suche nach qualifizierten SAP-Experten sind.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>In welchen Regionen sind Sie tätig?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Wir sind schwerpunktmäßig im deutschsprachigen Raum (Deutschland, Österreich, Schweiz) tätig, haben aber auch Projekte und Positionen in ganz Europa. Durch die Digitalisierung ist auch Remote-Arbeit für viele unserer Kunden und Kandidaten eine Option.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Wie lange dauert eine typische Vermittlung?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Die Dauer einer Vermittlung hängt von verschiedenen Faktoren ab, wie der Spezifität der Position, dem aktuellen Marktumfeld und der Verfügbarkeit von Kandidaten. In der Regel können wir innerhalb von 2-6 Wochen passende Kandidaten oder Positionen präsentieren.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Rafael Pilis</h3>
+                    <p>Ihr SAP Recruiting Experte</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-xing"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p><i class="fas fa-phone"></i> +49 123 456789</p>
+                    <p><i class="fas fa-envelope"></i> info@rafael-pilis.de</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Berlin, Deutschland</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Schnelllinks</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Rafael Pilis. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Formularvalidierung
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var inquiryType = document.getElementById('inquiryType').value;
+            var privacy = document.getElementById('privacy').checked;
+            
+            if (name === "" || email === "" || subject === "" || message === "" || inquiryType === "" || !privacy) {
+                alert("Bitte füllen Sie alle erforderlichen Felder (*) aus.");
+                return false;
+            }
+            
+            // E-Mail-Validierung
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
+                return false;
+            }
+            
+            // Hier würde in einer echten Implementierung der AJAX-Call zum Server folgen
+            alert("Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.");
+            document.getElementById('contactForm').reset();
+            return false; // Verhindert das tatsächliche Absenden des Formulars
+        }
+        
+        // FAQ-Accordion Funktionalität
+        document.addEventListener('DOMContentLoaded', function() {
+            var faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(function(question) {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    var answer = this.nextElementSibling;
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

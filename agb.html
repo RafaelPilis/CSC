@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allgemeine Geschäftsbedingungen - CloudStaff Consulting</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e40520;
+            --primary-dark: #c30016;
+            --secondary: #e2e8f0;
+            --secondary-light: #333333;
+            --white: #ffffff;
+            --grey: #f5f5f5;
+            --grey-dark: #dddddd;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --black: #1a1a1a;
+            --accent: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+        
+        nav ul li a:hover {
+            color: var(--black) !important;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+            margin-right: auto;
+            padding-right: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--black);
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .logo-divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--black);
+            margin: 5px 0 3px;
+        }
+        
+        .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--black);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a.active {
+            color: var(--black) !important;
+        }
+
+        /* Page Header */
+        .page-header {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            color: var(--white);
+        }
+
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .banner-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        
+        .page-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Terms Section */
+        .terms-section {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .terms-container {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .terms-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .terms-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--secondary);
+        }
+        
+        .terms-content p {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            line-height: 1.8;
+            margin-bottom: 22px;
+        }
+        
+        .terms-content ul, .terms-content ol {
+            margin-bottom: 24px;
+            margin-top: 8px;
+            padding-left: 28px;
+        }
+        
+        .terms-content ul li, .terms-content ol li {
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .footer-logo .logo-text {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        
+        .footer-logo .logo-divider {
+            width: 35%;
+            height: 1px;
+            background-color: var(--secondary);
+            margin: 5px 0 3px;
+        }
+        
+        .footer-logo .logo-tagline {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+        }
+        
+        .footer-logo p {
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #e2e8f0;
+            opacity: 0.8;
+            text-align: left !important;
+            word-spacing: normal !important;
+            white-space: normal !important;
+            text-justify: none !important;
+        }
+        
+        .footer-info {
+            flex: 2;
+            min-width: 250px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        
+        .footer-social {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-left: 10px;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+        }
+        
+        .footer-legal {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .footer-legal-links a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-legal-links a:hover {
+            color: var(--white);
+            opacity: 0.8;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta-button {
+            background: linear-gradient(135deg, #233e68 0%, #1a2d4d 100%);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .floating-cta-button i {
+            font-size: 18px;
+        }
+
+        .floating-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+            color: #fff;
+        }
+
+        .contact-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(30, 58, 95, 0.25);
+            z-index: 2000;
+            display: none;
+            padding: 20px;
+        }
+
+        .floating-contact-box {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(30,58,95,0.13);
+            padding: 18px 16px 14px 16px;
+            max-width: 340px;
+            width: 92vw;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            animation: fadeInPanel 0.2s;
+            position: fixed;
+            right: 30px;
+            bottom: 90px;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            color: #1e3a5f;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-overlay:hover {
+            color: #c00;
+        }
+
+        @keyframes fadeInPanel {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .contact-panel-content h3 {
+            font-size: 1rem;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+        }
+
+        .floating-contact-box .contact-phone,
+        .floating-contact-box .contact-form-link,
+        .floating-contact-box .contact-hours {
+            font-size: 1rem;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .floating-contact-box .contact-phone i,
+        .floating-contact-box .contact-form-link i {
+            color: #1e3a5f;
+            font-size: 16px;
+        }
+
+        .floating-contact-box .contact-phone a,
+        .floating-contact-box .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-weight: 400;
+        }
+
+        .floating-contact-box .contact-phone a:hover,
+        .floating-contact-box .contact-form-link a:hover {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+
+        .floating-contact-box .contact-hours {
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Contact Overlay Links */
+        .contact-overlay .contact-info-row .contact-phone a,
+        .contact-overlay .contact-info-row .contact-form-link a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .contact-overlay .contact-info-row .contact-phone a:hover,
+        .contact-overlay .contact-info-row .contact-form-link a:hover {
+            color: #1e3a5f;
+            background-color: #e2e8f0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                margin-top: 20px;
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                margin-left: 0;
+            }
+
+            .page-header {
+                height: 250px;
+            }
+
+            .page-header h2 {
+                font-size: 30px;
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+
+        /* Cookie Banner Styles */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, rgba(245, 245, 245, 0.95) 0%, #f5f5f5 10%, #f5f5f5 90%, rgba(245, 245, 245, 0.95) 100%);
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+            padding: 24px 20px;
+            z-index: 10000;
+            display: none;
+            border-top: 1px solid #1e3a5f;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cookie-banner-text {
+            flex: 1;
+            min-width: 300px;
+            color: var(--black);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-banner-text a {
+            color: #1e3a5f;
+            text-decoration: underline;
+        }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+        }
+
+        .cookie-btn-accept {
+            background-color: #1e3a5f;
+            color: var(--white);
+        }
+
+        .cookie-btn-accept:hover {
+            background-color: #2c4e80;
+        }
+
+        .cookie-btn-reject {
+            background-color: #ffffff;
+            color: #4a5568;
+            border: 1px solid #1e3a5f;
+        }
+
+        .cookie-btn-reject:hover {
+            background-color: #f0f0f0;
+        }
+
+        .cookie-btn-settings {
+            background-color: #ffffff;
+            color: #4a5568;
+            border: 1px solid #1e3a5f;
+        }
+
+        .cookie-btn-settings:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Cookie Settings Modal */
+        .cookie-settings-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 10001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .cookie-settings-modal.show {
+            display: flex;
+        }
+
+        .cookie-settings-content {
+            background-color: var(--white);
+            border-radius: 8px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookie-settings-content h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .cookie-settings-content p {
+            color: var(--accent);
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cookie-category {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--secondary);
+        }
+
+        .cookie-category:last-child {
+            border-bottom: none;
+        }
+
+        .cookie-category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .cookie-category-header h3 {
+            color: var(--black);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .cookie-toggle {
+            position: relative;
+            width: 50px;
+            height: 26px;
+        }
+
+        .cookie-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .cookie-toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.3s;
+            border-radius: 26px;
+        }
+
+        .cookie-toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider {
+            background-color: var(--primary);
+        }
+
+        .cookie-toggle input:checked + .cookie-toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        .cookie-category-description {
+            font-size: 13px;
+            color: var(--accent);
+            line-height: 1.5;
+        }
+
+        .cookie-settings-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .cookie-banner-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cookie-banner-buttons {
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; flex-direction: column; align-items: flex-start;">
+                <div class="logo-text">CSC</div>
+                <div class="logo-divider"></div>
+                <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="ueber-uns.html">Über uns</a></li>
+                    <li><a href="fuer-unternehmen.html">Unternehmen</a></li>
+                    <li><a href="fuer-kandidaten.html">Freelancer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="banner-image"></div>
+        <div class="banner-image-overlay">
+            <div class="container">
+                <h2>Allgemeine Geschäftsbedingungen</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-container">
+                <div class="terms-content">
+                    <p>Willkommen auf unserer Webseite. Diese Nutzungsbedingungen beziehen sich auf sämtliche Inhalte der Webseite unter den Domain-Namen www.cloudstaffconsulting.com and www. cloudstaffconsulting.de (Webseite) und auf sämtliche E-Mail-Korrespondenz zwischen Ihnen und uns.</p>
+
+                    <p>Indem Sie auf diese Webseite oder Teile davon zugreifen, stimmen Sie diesen Nutzungsbedingungen vollumfänglich zu und erklären, diese einzuhalten und durch die nachfolgenden Bestimmungen gebunden zu sein, welche zusammen mit den Datenschutzbestimmungen die Beziehungen zwischen Cloudstaff Consulting GmbH und Ihnen in Bezug auf diese Webseite regeln. Sollten Sie diese Nutzungsbedingungen nicht vollumfänglich akzeptieren, sind Sie aufgefordert, die Webseite umgehend zu verlassen.</p>
+
+                    <p>Die Begriffe "Cloudstaff Consulting", "CloudStaff", "CSC", "Wir" oder "Uns" bezieht sich auf den Inhaber und Betreiber dieser Webseite, dessen eingetragene Adresse: Cloudstaff Consulting GmbH, Im Mediapark 5, 50670 Köln (registriert in Deutschland, Handelsregisternummer 116636).</p>
+
+                    <p>Cloudstaff Consulting GmbH ist ein auf SAP-Recruitment und –Beratung spezialisiertes Unternehmen. Cloudstaff Consulting fungiert als:</p>
+                    <ul>
+                        <li>Eine Agentur, wenn Personal für unbefristete oder befristete Einsätze direkt an Kunden von Cloudstaff Consulting vermittelt wird</li>
+                        <li>Ein Leiharbeitsunternehmen, wenn Personal für vorübergehende Einsätze an Dienstleister unserer Kunden vermittelt wird</li>
+                    </ul>
+
+                    <p>Cloudstaff Consulting unterliegt den einschlägigen gesetzlichen Bestimmungen zur Arbeitsvermittlung und Arbeitnehmerüberlassung, sofern Sie Ihre Dienstleistungen nicht über eine eigene Firma erbringen und Sie bzw. Ihr Unternehmen nicht ausdrücklich auf die Anwendung dieser Regelungen verzichtet haben; und/oder sofern Sie bzw. Ihr Unternehmen bei der Erbringung der Dienstleistungen für Cloudstaff Consulting nicht unter der Leitung oder Kontrolle von Kunden von Cloudstaff Consulting stehen.</p>
+
+                    <p>Der Begriff "Sie" bezieht sich auf den User oder Betrachter unserer Webseite. Die Nutzung dieser Webseite unterliegt folgenden Nutzungsbedingungen:</p>
+
+                    <p>Die Inhalte dieser Seiten dienen ausschließlich allgemeinen Informations- und Nutzungszwecken. Sie können jederzeit geändert oder ohne vorherige Ankündigung entfernt werden. Wir sind bemüht, den Betrieb der Website störungsfrei aufrechtzuerhalten, übernehmen jedoch keine Verantwortung oder Haftung für vorübergehende oder dauerhafte technische Ausfälle oder eine etwaige Nichtverfügbarkeit der Website – unabhängig von deren Ursache.</p>
+
+                    <p>Wir behalten uns vor, bestimmte Seiten oder die gesamte Website ausschließlich registrierten Nutzern zugänglich zu machen. Eine Registrierung bezieht sich in diesem Fall stets auf eine einzelne Person. Cloudstaff Consulting untersagt die Weitergabe von Benutzernamen und Passwörtern an Dritte sowie deren gemeinsame Nutzung innerhalb eines Netzwerks. Für die Sicherheit und Vertraulichkeit Ihres Passworts sind Sie selbst verantwortlich.</p>
+
+                    <p>Die Inhalte unserer Website dienen ausschließlich allgemeinen Informationszwecken. Sie werden von Cloudstaff Consulting bereitgestellt. Obwohl wir uns um Aktualität, Vollständigkeit und Richtigkeit der Inhalte bemühen, übernehmen wir keinerlei Gewähr – weder ausdrücklich noch stillschweigend – für die Vollständigkeit, Genauigkeit, Verlässlichkeit, Angemessenheit oder Verfügbarkeit der Website sowie der darauf enthaltenen Informationen, Produkte, Dienstleistungen oder Grafiken. Jegliches Vertrauen auf die bereitgestellten Inhalte erfolgt daher auf eigenes Risiko. Sie sind selbst dafür verantwortlich sicherzustellen, dass alle über unsere Website zugänglichen Produkte, Dienstleistungen oder Informationen Ihren individuellen Anforderungen entsprechen. Cloudstaff Consulting übernimmt keine Verpflichtung zur Aktualisierung möglicherweise veralteter Inhalte.</p>
+
+                    <p>„Diese Website enthält Materialien, die entweder unser Eigentum sind oder uns im Rahmen von Lizenzen zur Nutzung überlassen wurden. Dieses Material ist weltweit durch Urheberrechtsgesetze und internationale Abkommen geschützt. Alle Rechte bleiben vorbehalten. Zu den geschützten Inhalten zählen unter anderem das Design, das Layout, die visuelle Gestaltung, das Erscheinungsbild sowie sämtliche Grafiken. Jegliche Vervielfältigung, Verbreitung oder sonstige Nutzung – ganz oder teilweise – ist ohne unsere vorherige schriftliche Zustimmung untersagt, es sei denn, eine der folgenden Ausnahmen trifft zu:</p>
+
+                    <ul>
+                        <li>Sie können Auszüge für Ihre persönliche und nichtkommerzielle Verwendung ausdrucken oder auf eine lokale Festplatte herunterladen; und</li>
+                        <li>Sie dürfen Inhalte dieser Website für Dritte ausschließlich zur persönlichen Nutzung kopieren, sofern dabei die Website als Quelle eindeutig angegeben wird.</li>
+                    </ul>
+
+                    <p>Eine Verbreitung, kommerzielle Verwertung, Weitergabe oder Speicherung der Inhalte in elektronisch abrufbaren Systemen – etwa auf anderen Websites oder Plattformen – ist ohne unsere ausdrückliche schriftliche Zustimmung nicht gestattet.</p>
+
+                    <p>Alle auf dieser Website genannten Marken, die nicht im Eigentum von Cloudstaff Consulting stehen oder von uns lizenziert wurden, sind entsprechend gekennzeichnet. Der Name ‚Cloudstaff Consulting' sowie alle damit verbundenen Logos und Kennzeichen sind eingetragene Marken von Cloudstaff Consulting in Deutschland.</p>
+
+                    <p>Jegliche Handlung, die die Sicherheit oder Funktionsfähigkeit der Website gefährden könnte, ist strikt untersagt. Dazu zählen unter anderem das bewusste Einschleusen von Viren, Trojanern, Würmern oder sonstiger schädlicher Software sowie der unbefugte Zugriff auf die Website, den Server, auf dem sie gespeichert ist, oder andere mit ihr verbundene Server, Computer oder Datenbanken. Ebenso verboten sind Angriffe in Form von Denial-of-Service- oder Distributed-Denial-of-Service-Attacken.</p>
+
+                    <p>Jede unbefugte Nutzung der Website kann zivilrechtliche Schadenersatzansprüche und/oder strafrechtliche Konsequenzen nach sich ziehen.</p>
+
+                    <p>Cloudstaff Consulting, jede andere Partei (ob involviert oder nicht involviert in die Schaffung, die Produktion, den Unterhalt oder den Vertrieb der Webseite) sowie alle Unternehmen der Cloudstaff Consulting sowie deren Verantwortliche, Direktoren, Angestellten, Aktionäre und Teilhaber oder Vertreter von solchen schließen jegliche Haftung und Verantwortung für jede Art und Höhe von Schaden und/oder Verlust aus, der Ihnen oder einem Dritten erwächst (namentlich unbegrenzt jegliche direkten, indirekten, Straf- und Folgeschäden und/oder –Verluste, oder jegliche Verluste und Einbußen des Einkommens, des Gewinns, Goodwills, von Daten, Verträgen, Geldverwendung, Verlusten oder Schäden aus oder in Verbindung mit der Unterbrechung des Geschäftsbetriebs, ob verschuldet (einschließlich, ohne Einschränkung, Fahrlässigkeit), vertraglich oder auf andere Weise) ob direkt mit der Webseite zusammenhängend oder mit deren Nutzung, Nutzungsunfähigkeit oder der Resultate der Nutzung der Webseite, oder von Webseiten die mit der Webseite verlinkt sind oder Inhalte von solchen Webseiten, einschließlich, jedoch nicht beschränkt auf Verluste und Schäden aufgrund von allfälligen Viren, welche Ihre EDV-Ausrüstung, Software, Daten oder anderes Eigentum aufgrund Ihres Zugangs, Ihrer Nutzung oder Durchsuchung der Webseite oder des Herunterladens von allfälligen Inhalten der Webseite oder irgendeiner anderen Webseite, welche mit der Webseite verlinkt ist, verursachen. Die Haftung von Cloudstaff Consulting wird durch diese Nutzungsbedingungen in folgenden Fällen weder ausgeschlossen noch beschränkt: Tod oder Personenschäden verursacht durch Fahrlässigkeit; durch Betrug; durch falsche Darstellung wesentlicher Punkte; oder jede andere Haftung, welche aufgrund des anwendbaren Rechts nicht beschränkt werden kann.</p>
+
+                    <p>Vereinzelt kann diese Webseite Links zu anderen Seiten enthalten, die sich der Kontrolle von Cloudstaff Consulting entziehen. Diese Links dienen zur Information. Dies bedeutet jedoch nicht, dass wir die Webseite und/oder ihren Inhalt gutheißen oder empfehlen. Wenn Sie diese Links nutzen verlassen Sie diese Webseite. Cloudstaff Consulting hat solche Webseiten von Dritten nicht umfassend geprüft, kontrolliert diese nicht und ist für solche Webseiten, deren Inhalt oder deren Erreichbarkeit nicht verantwortlich. Daher übernimmt Cloudstaff Consulting bezüglich solcher Webseiten oder deren Inhalt oder allfälliger Resultate, die deren Nutzung mit sich bringt, keine Verantwortung oder macht sich diese zu eigen. Wir übernehmen überdies keine Verantwortung für die Natur, den Inhalt und die Erreichbarkeit von verlinkten Webseiten. Wenn Sie auf Webseiten von Dritten zugreifen, welche mit der Webseite verlinkt sind, geschieht dies in Ihrer eigenen Verantwortung.</p>
+
+                    <p>Wir behalten uns das Recht vor, diese Nutzungsbedingungen sowie alle weiteren auf dieser Website veröffentlichten Informationen jederzeit und ohne vorherige Ankündigung zu ändern oder zu aktualisieren. Es obliegt Ihrer Verantwortung, diese Seite regelmäßig aufzurufen, um sich über etwaige Änderungen zu informieren, da die jeweils aktuelle Fassung der Nutzungsbedingungen verbindlich ist. Einzelne Bestimmungen dieser Nutzungsbedingungen können durch ausdrücklich gekennzeichnete Regelungen oder Hinweise ersetzt werden, die an anderer Stelle auf dieser Website veröffentlicht sind.</p>
+
+                    <p>Diese Nutzungsbedingungen sowie sämtliche Streitigkeiten oder Ansprüche, die sich aus ihnen oder im Zusammenhang mit ihrem Inhalt oder ihrer Ausgestaltung ergeben – einschließlich außervertraglicher Streitigkeiten oder Ansprüche – unterliegen dem Recht von England und Wales. Für alle Streitigkeiten im Zusammenhang mit dem Besuch dieser Website sind ausschließlich die Gerichte der Bundesrepublik Deutschland zuständig.</p>
+
+                    <p>Wenn Sie Bedenken oder Beschwerden über Material haben, das auf dieser Webseite erscheint, dann schreiben Sie uns bitte an info@cloudstaffconsulting.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-cta">
+        <a href="#" class="floating-cta-button" id="open-contact-overlay">
+            <i class="fas fa-envelope"></i>
+            Kontakt aufnehmen
+        </a>
+    </div>
+
+    <div class="contact-overlay" id="contact-overlay">
+        <div class="floating-contact-box" id="contact-box">
+            <button class="close-overlay" id="close-contact-overlay" aria-label="Schließen">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contact-panel-content">
+                <h3>Sie haben eine Frage oder brauchen Hilfe? Wir helfen Ihnen gerne!</h3>
+                <div class="contact-info-row">
+                    <div class="contact-phone">
+                        <i class="fas fa-headset"></i>
+                        <a href="tel:+4915170517620">+49 1517 0517 620</a>
+                    </div>
+                    <div class="contact-form-link">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@cloudstaffconsulting.com">info@cloudstaffconsulting.com</a>
+                    </div>
+                    <div class="contact-hours">Mo-Fr: 09:00 - 17:00 Uhr</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-text">CSC</div>
+                    <div class="logo-divider"></div>
+                    <div class="logo-tagline">WE CONNECT PEOPLE.</div>
+                    <p>
+                        CloudStaff Consulting GmbH ist Ihr vertrauensvoller Partner für SAP-Personalberatung in DACH.
+                    </p>
+                </div>
+                <div class="footer-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Im Mediapark 5, Köln, 50670, Deutschland</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+4915170517620" style="color: var(--white); text-decoration: none;">+49 (0) 1517 0517620</a></p>
+                    <p><i class="fas fa-envelope"></i> info@cloudstaffconsulting.com</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/cloudstaffconsulting" target="_blank" rel="noopener noreferrer" aria-label="CloudStaff Consulting auf LinkedIn (öffnet in neuem Tab)"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 CloudStaff Consulting GmbH. Alle Rechte vorbehalten.</p>
+                <div class="footer-legal-links">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        var openOverlayBtn = document.getElementById('open-contact-overlay');
+        var overlay = document.getElementById('contact-overlay');
+        var closeOverlayBtn = document.getElementById('close-contact-overlay');
+        var contactBox = document.getElementById('contact-box');
+
+        if (openOverlayBtn && overlay && closeOverlayBtn && contactBox) {
+            openOverlayBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                overlay.style.display = 'flex';
+            });
+
+            closeOverlayBtn.addEventListener('click', function() {
+                overlay.style.display = 'none';
+            });
+
+            overlay.addEventListener('mousedown', function(e) {
+                if (!contactBox.contains(e.target)) {
+                    overlay.style.display = 'none';
+                }
+            });
+        }
+    })();
+    </script>
+
+    <!-- Cookie-Handling für sessionId -->
+    <script>
+    (function() {
+        // Cookie-Funktionen
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        // sessionId Cookie setzen, lesen oder löschen
+        function initSessionId() {
+            var sessionId = getCookie('sessionId');
+            
+            // Wenn keine sessionId existiert, erstelle eine neue
+            if (!sessionId) {
+                // Generiere eine eindeutige sessionId (z.B. Timestamp + Random)
+                sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                // Setze Cookie für die Dauer der Browser-Session (ohne expires wird es beim Schließen gelöscht)
+                setCookie('sessionId', sessionId);
+            }
+            
+            return sessionId;
+        }
+
+        // Beim Laden der Seite sessionId initialisieren
+        initSessionId();
+
+        // Globale Funktionen für externe Nutzung verfügbar machen
+        window.CookieHandler = {
+            set: setCookie,
+            get: getCookie,
+            delete: deleteCookie,
+            getSessionId: function() {
+                return getCookie('sessionId');
+            },
+            deleteSessionId: function() {
+                deleteCookie('sessionId');
+            }
+        };
+    })();
+    </script>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Einige Cookies sind notwendig für den Betrieb der Website, während andere uns helfen, diese Website und die Nutzererfahrung zu verbessern. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-reject">Ablehnen</button>
+                <button class="cookie-btn cookie-btn-settings" id="cookie-settings-btn">Einstellungen</button>
+                <button class="cookie-btn cookie-btn-accept" id="cookie-accept">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div class="cookie-settings-modal" id="cookie-settings-modal">
+        <div class="cookie-settings-content">
+            <h2>Cookie-Einstellungen</h2>
+            <p>Sie können hier auswählen, welche Cookies Sie zulassen möchten. Notwendige Cookies können nicht deaktiviert werden, da sie für die Grundfunktionen der Website erforderlich sind.</p>
+            
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Notwendige Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden. Sie werden normalerweise nur als Reaktion auf Ihre Aktionen gesetzt, die einer Anfrage nach Diensten entsprechen, wie z.B. das Setzen Ihrer Datenschutzeinstellungen oder das Ausfüllen von Formularen.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Funktionale Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-functional">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies ermöglichen es der Website, erweiterte Funktionalität und Personalisierung bereitzustellen. Sie können von uns oder von Drittanbietern gesetzt werden, deren Dienste wir auf unseren Seiten verwenden.
+                </div>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-header">
+                    <h3>Analytische Cookies</h3>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookie-analytics">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category-description">
+                    Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie Informationen anonym sammeln und melden. Dies hilft uns, unsere Website zu verbessern.
+                </div>
+            </div>
+
+            <div class="cookie-settings-buttons">
+                <button class="cookie-btn cookie-btn-reject" id="cookie-save-settings">Einstellungen speichern</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Banner JavaScript -->
+    <script>
+        // Cookie-Funktionen global verfügbar machen
+        function getCookie(name) {
+            if (window.CookieHandler && window.CookieHandler.get) {
+                return window.CookieHandler.get(name);
+            }
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            if (window.CookieHandler && window.CookieHandler.set) {
+                return window.CookieHandler.set(name, value, days);
+            }
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function deleteCookie(name) {
+            if (window.CookieHandler && window.CookieHandler.delete) {
+                return window.CookieHandler.delete(name);
+            }
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function initSessionId() {
+            if (window.CookieHandler && window.CookieHandler.getSessionId) {
+                var sessionId = window.CookieHandler.getSessionId();
+                if (!sessionId) {
+                    sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                    setCookie('sessionId', sessionId);
+                }
+                return sessionId;
+            }
+            return null;
+        }
+
+        // Cookie-Banner anzeigen, wenn noch keine Entscheidung getroffen wurde
+        function showCookieBanner() {
+            var consent = getCookie('cookieConsent');
+            if (!consent) {
+                var banner = document.getElementById('cookie-banner');
+                if (banner) {
+                    banner.classList.add('show');
+                }
+            } else {
+                // Wenn bereits eine Entscheidung getroffen wurde, sessionId initialisieren
+                initSessionId();
+            }
+        }
+
+        // Cookie-Einstellungen speichern
+        function saveCookieSettings(functional, analytics) {
+            var settings = {
+                functional: functional,
+                analytics: analytics
+            };
+            setCookie('cookieConsent', 'custom', 365);
+            setCookie('cookieSettings', JSON.stringify(settings), 365);
+            
+            // sessionId setzen, wenn funktionale Cookies erlaubt sind
+            if (functional) {
+                initSessionId();
+            } else {
+                deleteCookie('sessionId');
+            }
+            
+            // Cookie-Banner ausblenden
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // Settings Modal ausblenden
+            var modal = document.getElementById('cookie-settings-modal');
+            if (modal) {
+                modal.classList.remove('show');
+            }
+        }
+
+        // Alle Cookies akzeptieren
+        function acceptAllCookies() {
+            setCookie('cookieConsent', 'accepted', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: true, analytics: true}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            initSessionId();
+        }
+
+        // Alle Cookies ablehnen
+        function rejectAllCookies() {
+            setCookie('cookieConsent', 'rejected', 365);
+            setCookie('cookieSettings', JSON.stringify({functional: false, analytics: false}), 365);
+            
+            var banner = document.getElementById('cookie-banner');
+            if (banner) {
+                banner.classList.remove('show');
+            }
+            
+            // sessionId löschen
+            deleteCookie('sessionId');
+        }
+
+        // Event Listener für Cookie-Buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            var acceptBtn = document.getElementById('cookie-accept');
+            var rejectBtn = document.getElementById('cookie-reject');
+            var settingsBtn = document.getElementById('cookie-settings-btn');
+            var saveSettingsBtn = document.getElementById('cookie-save-settings');
+            var settingsModal = document.getElementById('cookie-settings-modal');
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', acceptAllCookies);
+            }
+
+            if (rejectBtn) {
+                rejectBtn.addEventListener('click', rejectAllCookies);
+            }
+
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', function() {
+                    if (settingsModal) {
+                        settingsModal.classList.add('show');
+                    }
+                });
+            }
+
+            if (saveSettingsBtn) {
+                saveSettingsBtn.addEventListener('click', function() {
+                    var functional = document.getElementById('cookie-functional').checked;
+                    var analytics = document.getElementById('cookie-analytics').checked;
+                    saveCookieSettings(functional, analytics);
+                });
+            }
+
+            // Modal schließen beim Klick außerhalb
+            if (settingsModal) {
+                settingsModal.addEventListener('click', function(e) {
+                    if (e.target === settingsModal) {
+                        settingsModal.classList.remove('show');
+                    }
+                });
+            }
+
+            // Cookie-Banner anzeigen
+            showCookieBanner();
+        });
+    </script>
+</body>
+</html> 
