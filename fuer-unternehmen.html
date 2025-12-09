@@ -1031,7 +1031,76 @@
 
         @media (max-width: 768px) {
             .job-posting-header h2 {
-                font-size: 32px;
+                font-size: 28px;
+            }
+            
+            .job-posting-header p {
+                font-size: 15px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .form-group {
+                min-width: 100%;
+            }
+            
+            .form-control {
+                font-size: 16px;
+                padding: 14px 12px;
+            }
+            
+            .btn-submit {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 16px;
+            }
+            
+            .posting-form {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .job-posting-section {
+                padding: 40px 0;
+            }
+            
+            .job-posting-header h2 {
+                font-size: 24px;
+            }
+
+            .job-posting-header p {
+                font-size: 14px;
+            }
+            
+            .form-group label {
+                font-size: 14px;
+            }
+            
+            .form-control {
+                font-size: 16px;
+                padding: 12px 10px;
+            }
+            
+            .form-check {
+                margin: 20px 0;
+            }
+            
+            .form-check label {
+                font-size: 13px;
+            }
+            
+            .btn-submit {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+            
+            .posting-form {
+                padding: 20px 15px;
             }
         }
 
@@ -2573,60 +2642,67 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Funktion: E-Mail senden
-    function sendEmail(formData) {
-        const emailBody = `
-Neue Projektanfrage von der CloudStaff Consulting Website
-
-Persönliche Daten:
-- Vorname: ${formData.vorname}
-- Nachname: ${formData.nachname}
-- E-Mail: ${formData.email}
-- Telefon: ${formData.telefon || 'Nicht angegeben'}
-- Unternehmen: ${formData.unternehmensname || 'Nicht angegeben'}
-
-Projektdetails:
-- Einsatzort: ${formData.einsatzort}${formData.einsatzort === 'Hybrid' ? ' (Präsenzrate: ' + formData.praesenzrate + '%)' : ''}
-- Startdatum: ${formatGermanDate(formData.startdatum)}
-- Enddatum: ${formatGermanDate(formData.enddatum)}
-- Auslastung: ${formData.auslastung}%
-- Projektsprache: ${formData.projektsprache}
-
-Projektbeschreibung:
-${formData.nachricht}
-        `.trim();
+    // Funktion: E-Mail über Serverless Function senden
+    async function sendEmail(formData) {
+        // Submit-Button deaktivieren während des Sendens
+        const submitBtn = document.getElementById('submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
         
-        // E-Mail-Link erstellen
-        const mailtoLink = 'mailto:info@cloudstaffconsulting.com?subject=Neue Projektanfrage&body=' + encodeURIComponent(emailBody);
-        
-        // E-Mail öffnen (Fallback für Browser ohne direkten E-Mail-Versand)
-        // Hinweis: In einer Produktionsumgebung sollte hier ein Backend-Service verwendet werden
         try {
-            window.location.href = mailtoLink;
-        } catch (e) {
-            console.log('E-Mail konnte nicht geöffnet werden. Bitte senden Sie die Daten manuell an info@cloudstaffconsulting.com');
+            // Anfrage an die Vercel Serverless Function senden
+            const response = await fetch('/api/sendProjectRequest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok && result.success) {
+                // Erfolg: Success Modal anzeigen
+                successModal.style.display = 'flex';
+                
+                // Formular zurücksetzen
+                form.reset();
+                startdatum.value = today;
+                startdatum.min = today;
+                enddatum.min = today;
+                enddatum.value = '';
+                enddatum.style.color = 'transparent';
+                enddatumPlaceholder.style.display = 'block';
+                updateEnddatumPlaceholder();
+                praesenzrateContainer.style.display = 'none';
+                praesenzrateValue.textContent = '50%';
+                praesenzrate.value = '50';
+                validateForm();
+                
+                console.log('E-Mail erfolgreich versendet:', result);
+            } else {
+                // Fehler vom Server
+                throw new Error(result.error || 'E-Mail konnte nicht versendet werden.');
+            }
+        } catch (error) {
+            // Fehlerbehandlung
+            console.error('Fehler beim E-Mail-Versand:', error);
+            
+            // Fehlermeldung anzeigen
+            alert('Es ist ein Fehler aufgetreten. Ihre Anfrage konnte nicht versendet werden.\n\n' + 
+                  'Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt unter:\n' +
+                  'r.pilis@cloudstaffconsulting.com\n\n' +
+                  'Fehlerdetails: ' + error.message);
+        } finally {
+            // Submit-Button wieder aktivieren
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
         }
-        
-        // Alternative für Produktion: Hier könnte auch ein AJAX-Request an ein Backend gesendet werden
-        // Beispiel mit fetch:
-        /*
-        fetch('/api/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-                to: 'info@cloudstaffconsulting.com', 
-                subject: 'Neue Projektanfrage', 
-                body: emailBody 
-            })
-        })
-        .then(response => response.json())
-        .then(data => console.log('E-Mail gesendet:', data))
-        .catch(error => console.error('Fehler beim Senden:', error));
-        */
     }
     
     // Formular absenden
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         if (validateForm()) {
@@ -2646,25 +2722,9 @@ ${formData.nachricht}
                 nachricht: document.getElementById('nachricht').value
             };
             
-            // E-Mail senden
-            sendEmail(formData);
-            
-            // Success Modal anzeigen
-            successModal.style.display = 'flex';
-            
-            // Formular zurücksetzen
-            form.reset();
-            startdatum.value = today;
-            startdatum.min = today;
-            enddatum.min = today;
-            enddatum.value = '';
-            enddatum.style.color = 'transparent';
-            enddatumPlaceholder.style.display = 'block';
-            updateEnddatumPlaceholder();
-            praesenzrateContainer.style.display = 'none';
-            praesenzrateValue.textContent = '50%';
-            praesenzrate.value = '50';
-            validateForm();
+            // E-Mail über Serverless Function senden (async)
+            // Die Funktion sendEmail() kümmert sich um Success Modal und Formular-Reset
+            await sendEmail(formData);
         } else {
             alert('Bitte füllen Sie alle Pflichtfelder aus.');
             // Alle Fehlerfelder hervorheben
