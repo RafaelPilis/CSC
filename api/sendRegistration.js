@@ -34,8 +34,7 @@ module.exports = async (req, res) => {
             email,
             telefon,
             region,
-            nachricht,
-            projektliste // Base64-encoded file data
+            nachricht
         } = req.body;
 
         // Validierung: Pflichtfelder prüfen
@@ -65,7 +64,6 @@ module.exports = async (req, res) => {
                     .value { color: #333; }
                     .description { background-color: #f7f7f7; padding: 15px; border-radius: 5px; margin-top: 10px; }
                     .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #777; }
-                    .file-info { background-color: #e8f4f8; padding: 10px; border-radius: 5px; margin-top: 10px; }
                 </style>
             </head>
             <body>
@@ -94,15 +92,6 @@ module.exports = async (req, res) => {
                         <span class="value">${region || 'Nicht angegeben'}</span>
                     </div>
                     
-                    ${projektliste ? `
-                    <h2>Projektliste</h2>
-                    <div class="file-info">
-                        <strong>Datei:</strong> ${projektliste.filename}<br>
-                        <strong>Größe:</strong> ${(projektliste.size / 1024).toFixed(2)} KB<br>
-                        <em>Die Projektliste ist als Anhang dieser E-Mail beigefügt.</em>
-                    </div>
-                    ` : ''}
-                    
                     ${nachricht ? `
                     <h2>Nachricht</h2>
                     <div class="description">
@@ -129,36 +118,21 @@ Persönliche Daten:
 - Telefon: ${telefon || 'Nicht angegeben'}
 - Region: ${region || 'Nicht angegeben'}
 
-${projektliste ? `Projektliste: ${projektliste.filename} (siehe Anhang)` : 'Keine Projektliste hochgeladen'}
-
 ${nachricht ? `Nachricht:\n${nachricht}` : ''}
 
 ---
 Diese E-Mail wurde automatisch von der CloudStaff Consulting Website generiert.
         `.trim();
 
-        // E-Mail-Optionen vorbereiten
-        const emailOptions = {
+        // E-Mail via Resend senden (OHNE Attachments vorerst)
+        const data = await resend.emails.send({
             from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
-            to: process.env.RESEND_TO_EMAIL || 'r.pilis@cloudstaffconsulting.com',
+            to: process.env.RESEND_TO_EMAIL || 'info@cloudstaffconsulting.com',
             subject: subject,
             html: htmlBody,
             text: textBody,
             reply_to: email
-        };
-
-        // Wenn eine Datei hochgeladen wurde, als Attachment hinzufügen
-        if (projektliste && projektliste.content) {
-            emailOptions.attachments = [
-                {
-                    filename: projektliste.filename,
-                    content: projektliste.content // Base64-encoded content
-                }
-            ];
-        }
-
-        // E-Mail via Resend senden
-        const data = await resend.emails.send(emailOptions);
+        });
 
         // Erfolgreiche Antwort zurückgeben
         return res.status(200).json({ 
@@ -168,13 +142,15 @@ Diese E-Mail wurde automatisch von der CloudStaff Consulting Website generiert.
         });
 
     } catch (error) {
-        // Fehlerbehandlung
+        // Fehlerbehandlung mit mehr Details
         console.error('Fehler beim E-Mail-Versand:', error);
+        console.error('Error Stack:', error.stack);
+        console.error('Error Message:', error.message);
         
         return res.status(500).json({ 
             success: false, 
             error: 'Registrierung konnte nicht versendet werden. Bitte versuchen Sie es später erneut.',
-            details: process.env.NODE_ENV === 'development' ? error.message : undefined
+            details: error.message
         });
     }
 };
