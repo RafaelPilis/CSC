@@ -1846,12 +1846,23 @@
                 <div style="width: 80px; height: 4px; background: linear-gradient(90deg, #1e3a5f, #2c4e80); margin: 0 auto; border-radius: 2px;"></div>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
+            <div class="testimonials-grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto;">
                 <style>
                     @media (max-width: 768px) {
-                        .testimonials [style*="display: grid"] {
+                        .testimonials-grid-container {
                             grid-template-columns: 1fr !important;
-                            max-width: 500px !important;
+                            max-width: 450px !important;
+                            padding: 0 16px !important;
+                        }
+                        
+                        .testimonial-card {
+                            max-width: 100% !important;
+                        }
+                    }
+                    
+                    @media (max-width: 400px) {
+                        .testimonials-grid-container {
+                            max-width: 100% !important;
                             padding: 0 20px !important;
                         }
                     }
